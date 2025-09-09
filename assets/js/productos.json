@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Anillo de acero",
+    "precio": 2500,
+    "descripcion": "Anillo de acero inoxidable, resistente al agua.",
+    "img": "./assets/img/anillo1.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Cadena de acero",
+    "precio": 3500,
+    "descripcion": "Cadena fina de acero quirúrgico, hipoalergénica.",
+    "img": "./assets/img/cadena1.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Pulsera de plata",
+    "precio": 2800,
+    "descripcion": "Pulsera elegante de plata 925, diseño moderno.",
+    "img": "./assets/img/pulsera1.jpg"
+  }
+]
