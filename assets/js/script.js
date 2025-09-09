@@ -45,3 +45,14 @@ function mostrarModal(id) {
   new bootstrap.Modal(document.getElementById("productModal")).show();
 }
 export { productos, mostrarModal };
+
+// Loader dinámico asincrónico
+document.addEventListener("DOMContentLoaded", async () => {
+  // Simulamos carga asincrónica (puede ser fetch de productos o imágenes)
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.classList.add("hidden");
+  }
+});

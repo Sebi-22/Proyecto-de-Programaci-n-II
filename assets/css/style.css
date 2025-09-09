@@ -151,6 +151,51 @@ footer .social-icons a:hover {
 .modal-content {
   border-radius: 12px;
 }
+/* =========================
+   LOADER DE JOYAS GIRANDO
+========================= */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-ring {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: rotate 2s linear infinite;
+}
+
+.loader-ring span {
+  position: absolute;
+  font-size: 26px;
+  transform-origin: 50px 50px;
+}
+
+.loader-ring span:nth-child(1) { transform: rotate(0deg) translate(50px); }
+.loader-ring span:nth-child(2) { transform: rotate(90deg) translate(50px); }
+.loader-ring span:nth-child(3) { transform: rotate(180deg) translate(50px); }
+.loader-ring span:nth-child(4) { transform: rotate(270deg) translate(50px); }
+
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 /* =========================
    COLORES PERSONALIZADOS
