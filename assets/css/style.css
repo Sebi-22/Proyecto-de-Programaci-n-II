@@ -125,3 +125,13 @@ footer .social-icons a {
 footer .social-icons a:hover {
   color: #ffd700;
 } /* dorado para resaltar */
+
+.navbar-morado{ background-color:#a259c6; }
+.footer-morado{ background-color:#a259c6; color:white; }
+.btn-morado{ background-color:#a259c6; color:white; }
+.btn-morado:hover{ background-color:#8931a9; }
+.card{ border-radius:12px; border:none; transition:0.2s; }
+.card:hover{ transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+.modal-content{ border-radius:12px; }
+/* =========================
+   MEDIA QUERIES
