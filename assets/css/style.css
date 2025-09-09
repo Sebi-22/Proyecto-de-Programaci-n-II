@@ -3,8 +3,8 @@
 ========================= */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fd5ce2;
-  color: #333;
+  background: linear-gradient(135deg, #a259c6 0%, #6d28d9 100%);
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -16,42 +16,55 @@ a {
 a:hover {
   opacity: 0.8;
 }
+
 /* =========================
    NAVBAR
 ========================= */
 .navbar {
   padding: 1rem;
+  background: linear-gradient(90deg, #6d28d9 60%, #a259c6 100%) !important;
 }
 .navbar-brand {
   font-size: 1.5rem;
   letter-spacing: 1px;
+  color: #fff !important;
 }
 .navbar-dark .nav-link {
-  color: #f1f1f1;
+  color: #fff !important;
 }
 .navbar-dark .nav-link.active,
 .navbar-dark .nav-link:hover {
-  color: #ffd700; /* dorado para resaltar */
+  color: #ffd700 !important; /* dorado para resaltar */
 }
 
 /* =========================
    HERO
 ========================= */
 section.bg-light {
-  background: linear-gradient(135deg, #e3e3e3, #fdfdfd);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(162,89,198,0.08);
 }
 section.bg-light h1 {
   font-size: 3rem;
-  color: #111;
+  color: #6d28d9;
 }
 section.bg-light p {
   font-size: 1.25rem;
-  color: #444;
+  color: #a259c6;
 }
-section.bg-light .btn-dark {
-  background-color: #333;
+section.bg-light .btn-dark,
+.btn-morado {
+  background-color: #a259c6;
+  color: #fff;
   border-radius: 30px;
   padding: 0.75rem 2rem;
+  border: none;
+}
+section.bg-light .btn-dark:hover,
+.btn-morado:hover {
+  background-color: #6d28d9;
+  color: #fff;
 }
 
 /* =========================
@@ -61,21 +74,32 @@ section.bg-light .btn-dark {
   border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
+  background: #fff;
 }
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(162,89,198,0.15);
 }
 .card-title {
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #a259c6;
 }
 .card-text {
-  color: #666;
+  color: #6d28d9;
   font-size: 1rem;
 }
-.btn-outline-dark {
+.btn-outline-dark,
+.btn-morado {
   border-radius: 20px;
+  background-color: #a259c6;
+  color: #fff;
+  border: none;
+}
+.btn-outline-dark:hover,
+.btn-morado:hover {
+  background-color: #6d28d9;
+  color: #fff;
 }
 
 /* =========================
@@ -84,7 +108,20 @@ section.bg-light .btn-dark {
 footer {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+  background: #6d28d9;
+  color: #fff;
+}
+footer a {
+  color: #fff;
 }
 footer a:hover {
   color: #ffd700;
+} /* dorado para resaltar */
+footer .social-icons a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #fff;
 }
+footer .social-icons a:hover {
+  color: #ffd700;
+} /* dorado para resaltar */
