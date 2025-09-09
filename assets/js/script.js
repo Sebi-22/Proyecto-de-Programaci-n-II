@@ -2,24 +2,28 @@ import { Producto } from "./productos.js";
 
 let productos = [];
 
-fetch("./assets/js/productos.json") // ruta correcta desde la raíz
-  .then(res => res.json())
+fetch("./assets/js/productos.json")
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    return res.json();
+  })
   .then(data => {
     productos = data.map(p => new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img));
-    renderProductos();
+    renderDestacados();
   })
   .catch(err => console.error("Error cargando productos:", err));
 
-function renderProductos() {
+function renderDestacados() {
   const container = document.getElementById("productos");
   if (!container) return;
 
-  container.innerHTML = productos.map(p => p.renderCard()).join("");
+  // Solo mostrar los 3 primeros productos
+  const destacados = productos.slice(0, 3);
+  container.innerHTML = destacados.map(p => p.renderCard()).join("");
 
   document.querySelectorAll("[data-id]").forEach(btn => {
     btn.addEventListener("click", e => {
-      const id = e.target.getAttribute("data-id");
-      mostrarModal(id);
+      mostrarModal(e.currentTarget.getAttribute("data-id"));
     });
   });
 }
@@ -28,8 +32,8 @@ function mostrarModal(id) {
   const producto = productos.find(p => p.id == id);
   if (!producto) return;
 
+  const modalTitle = document.getElementById("productModalLabel");
   const modalBody = document.querySelector("#productModal .modal-body");
-  const modalTitle = document.querySelector("#productModalLabel");
 
   modalTitle.textContent = producto.nombre;
   modalBody.innerHTML = `
@@ -37,9 +41,7 @@ function mostrarModal(id) {
     <p><strong>Precio:</strong> $${producto.precio}</p>
     <p>${producto.descripcion}</p>
   `;
+
+  new bootstrap.Modal(document.getElementById("productModal")).show();
 }
-// Inicializar Bootstrap Modal
-const productModal = new bootstrap.Modal(document.getElementById('productModal'), {
-  keyboard: false
-});
 export { productos, mostrarModal };

@@ -6,6 +6,7 @@ body {
   background: linear-gradient(135deg, #a259c6 0%, #6d28d9 100%);
   color: #fff;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* Links */
@@ -40,29 +41,30 @@ a:hover {
 /* =========================
    HERO
 ========================= */
-section.bg-light {
+section.bg-white, section.bg-light {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(162,89,198,0.08);
+  color: #000;
 }
-section.bg-light h1 {
+section.bg-white h1, section.bg-light h1 {
   font-size: 3rem;
   color: #6d28d9;
 }
-section.bg-light p {
+section.bg-white p, section.bg-light p {
   font-size: 1.25rem;
   color: #a259c6;
 }
-section.bg-light .btn-dark,
-.btn-morado {
+section.bg-white .btn-morado, section.bg-light .btn-morado {
   background-color: #a259c6;
   color: #fff;
   border-radius: 30px;
   padding: 0.75rem 2rem;
   border: none;
+  transition: 0.3s;
 }
-section.bg-light .btn-dark:hover,
-.btn-morado:hover {
+section.bg-white .btn-morado:hover,
+section.bg-light .btn-morado:hover {
   background-color: #6d28d9;
   color: #fff;
 }
@@ -70,11 +72,26 @@ section.bg-light .btn-dark:hover,
 /* =========================
    CARDS DE PRODUCTOS
 ========================= */
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las cards */
+  gap: 1.5rem;
+}
 .card {
   border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
   background: #fff;
+  color: #000;
+  max-width: 300px;
+  text-align: center;
+}
+.card img {
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -95,6 +112,7 @@ section.bg-light .btn-dark:hover,
   background-color: #a259c6;
   color: #fff;
   border: none;
+  transition: 0.3s;
 }
 .btn-outline-dark:hover,
 .btn-morado:hover {
@@ -110,13 +128,14 @@ footer {
   letter-spacing: 0.5px;
   background: #6d28d9;
   color: #fff;
+  padding: 2rem 0;
 }
 footer a {
   color: #fff;
 }
 footer a:hover {
   color: #ffd700;
-} /* dorado para resaltar */
+}
 footer .social-icons a {
   font-size: 1.5rem;
   margin-right: 1rem;
@@ -124,14 +143,35 @@ footer .social-icons a {
 }
 footer .social-icons a:hover {
   color: #ffd700;
-} /* dorado para resaltar */
+}
 
-.navbar-morado{ background-color:#a259c6; }
-.footer-morado{ background-color:#a259c6; color:white; }
-.btn-morado{ background-color:#a259c6; color:white; }
-.btn-morado:hover{ background-color:#8931a9; }
-.card{ border-radius:12px; border:none; transition:0.2s; }
-.card:hover{ transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
-.modal-content{ border-radius:12px; }
+/* =========================
+   MODAL
+========================= */
+.modal-content {
+  border-radius: 12px;
+}
+
+/* =========================
+   COLORES PERSONALIZADOS
+========================= */
+.navbar-morado { background-color: #a259c6; }
+.footer-morado { background-color: #a259c6; color:white; }
+.btn-morado { background-color: #a259c6; color:white; }
+.btn-morado:hover { background-color: #8931a9; }
+.card { border-radius:12px; border:none; transition:0.2s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+
 /* =========================
    MEDIA QUERIES
+========================= */
+@media (max-width: 768px) {
+  .card img { height: 180px; }
+  section.bg-white h1, section.bg-light h1 { font-size: 2rem; }
+  section.bg-white p, section.bg-light p { font-size: 1rem; }
+}
+@media (max-width: 480px) {
+  .card { max-width: 100%; }
+  section.bg-white h1, section.bg-light h1 { font-size: 1.5rem; }
+  section.bg-white p, section.bg-light p { font-size: 0.9rem; }
+}

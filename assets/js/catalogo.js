@@ -2,7 +2,7 @@ import { Producto } from "./productos.js";
 
 let productos = [];
 
-fetch("./assets/js/productos.json")
+fetch("../assets/js/productos.json")
   .then(res => {
     if(!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     return res.json();
@@ -13,19 +13,18 @@ fetch("./assets/js/productos.json")
   })
   .catch(err => console.error("Error cargando productos:", err));
 
-function renderProductos(filtrados = productos){
+function renderProductos(filtrados = productos) {
   const container = document.getElementById("productos");
   if(!container) return;
 
   container.innerHTML = filtrados.map(p => p.renderCard()).join("");
 
-  document.querySelectorAll("[data-id]").forEach(btn=>{
-    btn.addEventListener("click", e=>{
-      mostrarModal(e.currentTarget.getAttribute("data-id"));
-    });
+  document.querySelectorAll("[data-id]").forEach(btn => {
+    btn.addEventListener("click", e => mostrarModal(e.currentTarget.getAttribute("data-id")));
   });
 }
 
+// Modal igual que en Home
 function mostrarModal(id){
   const producto = productos.find(p => p.id == id);
   if(!producto) return;
@@ -43,7 +42,7 @@ function mostrarModal(id){
   new bootstrap.Modal(document.getElementById("productModal")).show();
 }
 
-// FILTRO POR PRECIO
+// Filtro de precios opcional
 const filtroPrecio = document.getElementById("filtroPrecio");
 if(filtroPrecio){
   filtroPrecio.addEventListener("change", e=>{
@@ -55,5 +54,4 @@ if(filtroPrecio){
     renderProductos(filtrados);
   });
 }
-
 export { productos, mostrarModal };

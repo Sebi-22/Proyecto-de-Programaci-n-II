@@ -4,20 +4,56 @@
     "nombre": "Anillo de acero",
     "precio": 2500,
     "descripcion": "Anillo de acero inoxidable, resistente al agua.",
-    "img": "./assets/img/anillo1.jpg"
+    "img": "img/anillo1.jpg"
   },
   {
     "id": 2,
     "nombre": "Cadena de acero",
     "precio": 3500,
     "descripcion": "Cadena fina de acero quirúrgico, hipoalergénica.",
-    "img": "./assets/img/cadena1.jpg"
+    "img": "img/cadena1.jpg"
   },
   {
     "id": 3,
-    "nombre": "Pulsera de plata",
+    "nombre": "Pulsera de acero",
+    "precio": 3200,
+    "descripcion": "Pulsera resistente y elegante para el día a día.",
+    "img": "img/pulsera1.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Reloj de acero",
+    "precio": 4800,
+    "descripcion": "Reloj de acero inoxidable con correa ajustable.",
+    "img": "img/reloj1.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Aretes de acero",
+    "precio": 1500,
+    "descripcion": "Aretes minimalistas de acero inoxidable, cómodos y duraderos.",
+    "img": "img/aretes1.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Anillo con diseño",
     "precio": 2800,
-    "descripcion": "Pulsera elegante de plata 925, diseño moderno.",
-    "img": "./assets/img/pulsera1.jpg"
+    "descripcion": "Anillo con diseño moderno en acero inoxidable.",
+    "img": "img/anillo2.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Cadena gruesa",
+    "precio": 4200,
+    "descripcion": "Cadena gruesa de acero quirúrgico, ideal para colgar amuletos.",
+    "img": "img/cadena2.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Pulsera trenzada",
+    "precio": 3500,
+    "descripcion": "Pulsera de acero trenzado, elegante y resistente.",
+    "img": "img/pulsera2.jpg"
   }
 ]
+
