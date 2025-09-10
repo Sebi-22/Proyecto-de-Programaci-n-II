@@ -1,59 +1,59 @@
 [
   {
     "id": 1,
-    "nombre": "Anillo de acero",
-    "precio": 2500,
-    "descripcion": "Anillo de acero inoxidable, resistente al agua.",
-    "img": "img/anillo1.jpg"
+    "nombre": "Anillo Solitario",
+    "precio": 1575,
+    "descripcion": "Anillo solitario cubic rosa.",
+    "img": "assets/images/Anillo solitario cubic rosa.jpg"
   },
   {
     "id": 2,
-    "nombre": "Cadena de acero",
-    "precio": 3500,
-    "descripcion": "Cadena fina de acero quirúrgico, hipoalergénica.",
-    "img": "img/cadena1.jpg"
+    "nombre": "Pulsera de acero CHARMS",
+    "precio":6195,
+    "descripcion": "Acero CHARMS osos marron.",
+    "img": "assets/images/Pulsera acero CHARMS Oso marron.jpg"
   },
   {
     "id": 3,
-    "nombre": "Pulsera de acero",
-    "precio": 3200,
-    "descripcion": "Pulsera resistente y elegante para el día a día.",
-    "img": "img/pulsera1.jpg"
+    "nombre": "Cadena de acero",
+    "precio": 3335,
+    "descripcion": "Acero trenzada cierre marinero.",
+    "img": "assets/images/Cadena Acero trenzada cierre marinero.jpg"
   },
   {
     "id": 4,
-    "nombre": "Reloj de acero",
-    "precio": 4800,
-    "descripcion": "Reloj de acero inoxidable con correa ajustable.",
-    "img": "img/reloj1.jpg"
+    "nombre": "Pulsera de acero rolo",
+    "precio": 2550,
+    "descripcion": "Acero rolo cierre marinero .",
+    "img": "assets/images/Pulsera acero rolo cierre marinero.jpg"
   },
   {
     "id": 5,
-    "nombre": "Aretes de acero",
-    "precio": 1500,
-    "descripcion": "Aretes minimalistas de acero inoxidable, cómodos y duraderos.",
-    "img": "img/aretes1.jpg"
+    "nombre": "Dijes de acero",
+    "precio": 1248,
+    "descripcion": "Acero cruz inflada corazones.",
+    "img": "assets/images/Dije acero cruz inflada corazonres.jpg"
   },
   {
     "id": 6,
-    "nombre": "Anillo con diseño",
-    "precio": 2800,
-    "descripcion": "Anillo con diseño moderno en acero inoxidable.",
-    "img": "img/anillo2.jpg"
+    "nombre": "Dije Colibri",
+    "precio": 735,
+    "descripcion": "Acero colibri.",
+    "img": "assets/images/dije acero colibri.jpg"
   },
   {
     "id": 7,
-    "nombre": "Cadena gruesa",
-    "precio": 4200,
-    "descripcion": "Cadena gruesa de acero quirúrgico, ideal para colgar amuletos.",
-    "img": "img/cadena2.jpg"
+    "nombre": "Aros colgante doble circulos",
+    "precio": 1155,
+    "descripcion": "Acero colgante doble circulos.",
+    "img": "assets/images/Aros acero colgante doble circulos.jpg"
   },
   {
     "id": 8,
-    "nombre": "Pulsera trenzada",
-    "precio": 3500,
-    "descripcion": "Pulsera de acero trenzado, elegante y resistente.",
-    "img": "img/pulsera2.jpg"
+    "nombre": "Abridor acero mariposa y cobra x12 pares",
+    "precio": 18748,
+    "descripcion": "Abridor de acero mariposa y cobrea x12 pares.",
+    "img": "assets/images/Abridor acero mariposa y cobra x12 pares.jpg"
   }
 ]
 

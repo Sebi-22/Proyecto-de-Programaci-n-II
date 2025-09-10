@@ -56,3 +56,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     loader.classList.add("hidden");
   }
 });
+
+// Gestión de sesión y actualización del navbar
+document.addEventListener("DOMContentLoaded", () => {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));//parse es un método que convierte un string en un objeto y getItem es un método que obtiene el valor de una clave en el almacenamiento local
+  const navCuenta = document.getElementById("navCuenta");
+  const navCuentaText = document.getElementById("navCuentaText");
+
+  if (usuario && navCuenta && navCuentaText) {
+    // Cambiar el texto del botón de cuenta
+    navCuentaText.textContent = usuario.email;
+
+    // Reemplazar menú con perfil, pedidos y cerrar sesión
+    navCuenta.querySelector(".dropdown-menu").innerHTML = `
+      <li><a class="dropdown-item" href="pages/miPerfil.html">Mi Perfil</a></li>
+      <li><a class="dropdown-item" href="pages/pedidos.html">Mis Pedidos</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a></li>
+    `;
+
+    // Evento cerrar sesión
+    document.getElementById("cerrarSesion").addEventListener("click", () => {
+      localStorage.removeItem("usuario");
+      window.location.reload(); // recarga la página para actualizar navbar
+    });
+  }
+});
+
