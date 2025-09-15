@@ -117,3 +117,4 @@ if (btnPagar) {
     window.location.href = "https://link.mercadopago.com.ar/mazalparatodos";
   });
 }
+
