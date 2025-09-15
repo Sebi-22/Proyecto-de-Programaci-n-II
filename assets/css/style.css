@@ -37,7 +37,15 @@ a:hover {
 .navbar-dark .nav-link:hover {
   color: #ffd700 !important; /* dorado para resaltar */
 }
-
+/* =========================
+   LOGO NAVBAR
+========================= */
+.navbar-brand img {
+  height: 125px;       /* altura fija del logo */
+  width: auto;        /* ancho automático para mantener proporción */
+  object-fit: contain; /* que no se deforme */
+  transition: all 0.3s ease;
+}
 /* =========================
    HERO
 ========================= */
@@ -279,4 +287,16 @@ footer .social-icons a:hover {
     width: 90%;
   }
   .card img { height: 150px; }
+}
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 40px; /* más pequeño en tablet/móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand img {
+    height: 35px; /* aún más pequeño en móviles */
+  }
 }
