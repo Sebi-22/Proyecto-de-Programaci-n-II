@@ -25,7 +25,7 @@ function initModalOnce() {
 }
 
 function mostrarModal(id) {
-  const producto = productos.find((p) => p.id == id);
+  const producto = productos.find((p) => p.id === Number(id));
   if (!producto || !modalInstance) return;
 
   const modalTitle = modalEl.querySelector("#productModalLabel");
@@ -36,12 +36,26 @@ function mostrarModal(id) {
     <img src="${basePath + producto.img}" class="img-fluid mb-3" alt="${producto.nombre}">
     <p><strong>Precio:</strong> $${producto.precio}</p>
     <p>${producto.descripcion}</p>
+    <button class="btn btn-warning w-100 mt-3" id="btnAddCarrito">Agregar al carrito 🛒</button>
   `;
+
+  modalBody.querySelector("#btnAddCarrito").addEventListener("click", async () => {
+    const { agregarAlCarrito } = await getCarritoModule();
+    agregarAlCarrito({
+      id: producto.id,
+      nombre: producto.nombre,
+      precio: producto.precio,
+      descripcion: producto.descripcion,
+      img: producto.img,
+      categoria: producto.categoria
+    });
+    modalInstance.hide();
+  });
 
   modalInstance.show();
 }
 
-// --- Render productos/destacados ---
+// --- Render productos ---
 function renderProductos(filtrados = productos, containerId = "productos") {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -72,14 +86,14 @@ function renderProductos(filtrados = productos, containerId = "productos") {
     desc.classList.add("card-text");
 
     const precio = document.createElement("p");
-    precio.textContent = `$${p.precio}`;
+    precio.textContent = $${p.precio};
     precio.classList.add("card-text", "fw-bold");
 
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = "Ver más";
     btn.dataset.id = p.id;
-    btn.classList.add("btn", "btn-ver-mas"); // misma clase para todos
+    btn.classList.add("btn", "btn-ver-mas");
     btn.addEventListener("click", () => mostrarModal(p.id));
 
     const btnCarrito = document.createElement("button");
