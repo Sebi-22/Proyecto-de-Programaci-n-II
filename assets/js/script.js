@@ -159,3 +159,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 export { productos, mostrarModal, renderDestacados };
+
+
