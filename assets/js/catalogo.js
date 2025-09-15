@@ -1,17 +1,17 @@
-// catalogo.js
 import { Producto } from "./productos.js";
 
 let productos = [];
+
+// --- Modal ---
 const modalEl = document.getElementById("productModal");
 let modalInstance = null;
 
-// --- Detectar basePath según la ubicación del HTML ---
+// Detectar basePath (si estás en /pages/)
 let basePath = "";
 if (window.location.pathname.includes("/pages/")) {
   basePath = "../";
 }
 
-// --- Inicializar modal solo una vez ---
 function initModalOnce() {
   if (!modalEl) return;
   modalInstance = new bootstrap.Modal(modalEl);
@@ -38,7 +38,7 @@ function setInertOnBackground(enable) {
   });
 }
 
-// --- Mostrar modal ---
+// --- Modal con carrito ---
 function mostrarModal(id) {
   const producto = productos.find(p => p.id == id);
   if (!producto) return;
@@ -53,21 +53,94 @@ function mostrarModal(id) {
     <img src="${basePath + producto.img}" class="img-fluid mb-3" alt="${producto.nombre}">
     <p><strong>Precio:</strong> $${producto.precio}</p>
     <p>${producto.descripcion}</p>
+    <button class="btn btn-morado w-100 mt-3" data-id="${producto.id}" id="btnModalCarrito">
+      <i class="bi bi-cart-plus"></i> Agregar al carrito
+    </button>
+    <button class="btn btn-danger w-100 mt-2" data-id="${producto.id}" id="btnModalEliminar">
+      <i class="bi bi-trash"></i> Eliminar del carrito
+    </button>
   `;
+
+  // eventos
+  modalBody.querySelector("#btnModalCarrito").addEventListener("click", () => {
+    agregarAlCarrito(producto.id);
+  });
+  modalBody.querySelector("#btnModalEliminar").addEventListener("click", () => {
+    eliminarDelCarrito(producto.id);
+  });
 
   modalInstance.show();
 }
 
-// --- Render de productos ---
+// --- Carrito ---
+function agregarAlCarrito(id) {
+  let carrito = localStorage.getItem("carrito") || "";
+  let nuevoCarrito = "";
+  let encontrado = false;
+
+  if (carrito !== "") {
+    const items = carrito.split(";");
+    for (let i = 0; i < items.length; i++) {
+      if (items[i] === "") continue;
+      const [itemId, cantStr] = items[i].split(",");
+      let cant = parseInt(cantStr);
+
+      if (itemId == id) {
+        cant += 1;
+        encontrado = true;
+      }
+      nuevoCarrito += itemId + "," + cant + ";";
+    }
+  }
+  if (!encontrado) nuevoCarrito += id + ",1;";
+
+  localStorage.setItem("carrito", nuevoCarrito);
+  actualizarContadorCarrito();
+}
+
+function eliminarDelCarrito(id) {
+  let carrito = localStorage.getItem("carrito") || "";
+  let nuevoCarrito = "";
+
+  if (carrito !== "") {
+    const items = carrito.split(";");
+    for (let i = 0; i < items.length; i++) {
+      if (items[i] === "") continue;
+      const [itemId, cantStr] = items[i].split(",");
+      if (itemId == id) continue;
+      nuevoCarrito += itemId + "," + cantStr + ";";
+    }
+  }
+
+  localStorage.setItem("carrito", nuevoCarrito);
+  actualizarContadorCarrito();
+}
+
+function actualizarContadorCarrito() {
+  const carrito = localStorage.getItem("carrito") || "";
+  let total = 0;
+
+  if (carrito !== "") {
+    const items = carrito.split(";");
+    for (let i = 0; i < items.length; i++) {
+      if (items[i] === "") continue;
+      const [, cantStr] = items[i].split(",");//split es un método de JavaScript para strings que sirve para dividir un texto en partes usando un separador.
+      total += parseInt(cantStr);
+    }
+  }
+
+  const badge = document.querySelector(".bi-cart-fill + .badge");
+  if (badge) badge.textContent = total;
+}
+
+// --- Render productos ---
 function renderProductos(filtrados = productos) {
   const container = document.getElementById("productos");
   if (!container) return;
 
-  container.innerHTML = ""; // limpiar
+  container.innerHTML = "";
 
-  for (let i = 0; i < filtrados.length; i++) {
-    const p = filtrados[i];
-
+  filtrados.forEach(p => {
     const col = document.createElement("div");
     col.classList.add("col-md-4");
 
@@ -99,71 +172,60 @@ function renderProductos(filtrados = productos) {
     btn.textContent = "Ver más";
     btn.dataset.id = p.id;
     btn.classList.add("btn", "btn-primary");
+    btn.addEventListener("click", () => mostrarModal(p.id));
 
-    btn.addEventListener("click", function() {
-      mostrarModal(btn.dataset.id);
-    });
-
-    cardBody.appendChild(h5);
-    cardBody.appendChild(desc);
-    cardBody.appendChild(precio);
-    cardBody.appendChild(btn);
-
-    card.appendChild(img);
-    card.appendChild(cardBody);
+    cardBody.append(h5, desc, precio, btn);
+    card.append(img, cardBody);
     col.appendChild(card);
-
     container.appendChild(col);
-  }
+  });
 }
 
-// --- Aplicar filtros ---
+// --- Filtros ---
 function aplicarFiltros() {
-  let filtrados = [];
-  for (let i = 0; i < productos.length; i++) filtrados.push(productos[i]);
+  let filtrados = [...productos];
 
-  // Filtro precio
-  const valorPrecio = document.getElementById("filtroPrecio").value;
-  if (valorPrecio === "0-3000") filtrados = filtrados.filter(p => p.precio <= 3000);
-  else if (valorPrecio === "3001-5000") filtrados = filtrados.filter(p => p.precio >= 3001 && p.precio <= 5000);
-  else if (valorPrecio === "5001-10000") filtrados = filtrados.filter(p => p.precio > 5000);
-
-  // Filtro categoría
-  const valorCat = document.getElementById("filtroCategoria")?.value.toLowerCase().trim();
-  if (valorCat && valorCat !== "todos") {
-    filtrados = filtrados.filter(p => p.categoria && p.categoria.toLowerCase().trim() === valorCat);
+  // filtro de precio
+  const valorPrecio = document.getElementById("filtroPrecio")?.value;
+  if (valorPrecio === "0-3000") {
+    filtrados = filtrados.filter(p => p.precio <= 3000);
+  } else if (valorPrecio === "3001-5000") {
+    filtrados = filtrados.filter(p => p.precio >= 3001 && p.precio <= 5000);
+  } else if (valorPrecio === "5001-10000") {
+    filtrados = filtrados.filter(p => p.precio > 5000 && p.precio <= 10000);
   }
 
+  // filtro de categoría
+  const valorCat = document.getElementById("filtroCategoria")?.value;
+  if (valorCat && valorCat !== "todos") {
+    filtrados = filtrados.filter(p => p.categoria === valorCat);
+  }
+
+  // renderizar productos filtrados
   renderProductos(filtrados);
 }
 
-// --- Listeners filtros ---
-const filtroPrecio = document.getElementById("filtroPrecio");
-if (filtroPrecio) filtroPrecio.addEventListener("change", aplicarFiltros);
 
-const filtroCategoria = document.getElementById("filtroCategoria");
-if (filtroCategoria) filtroCategoria.addEventListener("change", aplicarFiltros);
+document.getElementById("filtroPrecio")?.addEventListener("change", aplicarFiltros);
+document.getElementById("filtroCategoria")?.addEventListener("change", aplicarFiltros);
 
 // --- Cargar productos ---
 fetch(basePath + "assets/js/productos.json")
-  .then(res => {
-    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-    return res.json();
-  })
+  .then(res => res.json())
   .then(data => {
-    for (let i = 0; i < data.length; i++) {
-      const p = data[i];
+    data.forEach(p => {
       productos.push(new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img, p.categoria));
-    }
-    renderProductos(); // mostrar todos
+    });
+    renderProductos();
+    actualizarContadorCarrito();
   })
   .catch(err => console.error("Error cargando productos:", err));
 
-// --- Inicializar modal al cargar DOM ---
+// --- Init modal ---
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initModalOnce);
 } else {
   initModalOnce();
 }
 
-export { productos, mostrarModal };
+export { productos, mostrarModal, agregarAlCarrito, eliminarDelCarrito, actualizarContadorCarrito };

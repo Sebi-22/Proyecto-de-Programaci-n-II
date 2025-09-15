@@ -4,56 +4,63 @@
     "nombre": "Anillo Solitario",
     "precio": 1575,
     "descripcion": "Anillo solitario cubic rosa.",
-    "img": "assets/images/Anillo solitario cubic rosa.jpg"
+    "img": "assets/images/Anillo solitario cubic rosa.jpg",
+    "categoria": "anillos"
   },
   {
     "id": 2,
     "nombre": "Pulsera de acero CHARMS",
-    "precio":6195,
+    "precio": 6195,
     "descripcion": "Acero CHARMS osos marron.",
-    "img": "assets/images/Pulsera acero CHARMS Oso marron.jpg"
+    "img": "assets/images/Pulsera acero CHARMS Oso marron.jpg",
+    "categoria": "pulseras"
   },
   {
     "id": 3,
     "nombre": "Cadena de acero",
     "precio": 3335,
     "descripcion": "Acero trenzada cierre marinero.",
-    "img": "assets/images/Cadena Acero trenzada cierre marinero.jpg"
+    "img": "assets/images/Cadena Acero trenzada cierre marinero.jpg",
+    "categoria": "collares"
   },
   {
     "id": 4,
     "nombre": "Pulsera de acero rolo",
     "precio": 2550,
     "descripcion": "Acero rolo cierre marinero .",
-    "img": "assets/images/Pulsera acero rolo cierre marinero.jpg"
+    "img": "assets/images/Pulsera acero rolo cierre marinero.jpg",
+    "categoria": "pulseras"
   },
   {
     "id": 5,
     "nombre": "Dijes de acero",
     "precio": 1248,
     "descripcion": "Acero cruz inflada corazones.",
-    "img": "assets/images/Dije acero cruz inflada corazonres.jpg"
+    "img": "assets/images/Dije acero cruz inflada corazonres.jpg",
+    "categoria": "dijes/colgantes"
   },
   {
     "id": 6,
     "nombre": "Dije Colibri",
     "precio": 735,
     "descripcion": "Acero colibri.",
-    "img": "assets/images/dije acero colibri.jpg"
+    "img": "assets/images/dije acero colibri.jpg",
+    "categoria": "dijes/colgantes"
   },
   {
     "id": 7,
     "nombre": "Aros colgante doble circulos",
     "precio": 1155,
     "descripcion": "Acero colgante doble circulos.",
-    "img": "assets/images/Aros acero colgante doble circulos.jpg"
+    "img": "assets/images/Aros acero colgante doble circulos.jpg",
+    "categoria": "aros"
   },
   {
     "id": 8,
     "nombre": "Abridor acero mariposa y cobra x12 pares",
     "precio": 18748,
     "descripcion": "Abridor de acero mariposa y cobrea x12 pares.",
-    "img": "assets/images/Abridor acero mariposa y cobra x12 pares.jpg"
+    "img": "assets/images/Abridor acero mariposa y cobra x12 pares.jpg",
+    "categoria": "abridores"
   }
 ]
-
