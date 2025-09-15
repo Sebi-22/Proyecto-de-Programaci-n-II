@@ -86,7 +86,7 @@ function renderProductos(filtrados = productos, containerId = "productos") {
     desc.classList.add("card-text");
 
     const precio = document.createElement("p");
-    precio.textContent = $${p.precio};
+    precio.textContent = `$${p.precio}`;
     precio.classList.add("card-text", "fw-bold");
 
     const btn = document.createElement("button");
