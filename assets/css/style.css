@@ -70,56 +70,93 @@ section.bg-light .btn-morado:hover {
 }
 
 /* =========================
-   CARDS DE PRODUCTOS
+   CARDS ESTILO ECOMMERCE
 ========================= */
 #productos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centra las cards */
+  justify-content: center;
   gap: 1.5rem;
 }
+
 .card {
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
+  border: 2px solid violet; /* borde violeta */
+  border-radius: 8px;
   background: #fff;
   color: #000;
-  max-width: 300px;
-  text-align: center;
+  width: 250px; /* ancho uniforme */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card img {
-  border-radius: 12px 12px 0 0;
-  object-fit: cover;
-  height: 200px;
   width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(162,89,198,0.15);
+
+.card-body {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
+
 .card-title {
   font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: #6d28d9;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  line-height: 1.2;
+}
+
+.card-precio {
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: #a259c6;
+  font-size: 1.1rem;
 }
-.card-text {
-  color: #6d28d9;
-  font-size: 1rem;
+
+.btn-ver-mas,
+.btn-warning {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
 }
-.btn-outline-dark,
-.btn-morado {
-  border-radius: 20px;
-  background-color: #a259c6;
+
+.btn-ver-mas {
+  background-color: #6c63ff;
   color: #fff;
   border: none;
-  transition: 0.3s;
 }
-.btn-outline-dark:hover,
-.btn-morado:hover {
-  background-color: #6d28d9;
+
+.btn-ver-mas:hover {
+  background-color: #574fd6;
   color: #fff;
 }
 
+.btn-warning {
+  background-color: #fcd34d;
+  color: #000;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
 /* =========================
    FOOTER
 ========================= */
@@ -228,4 +265,18 @@ footer .social-icons a:hover {
   .card { max-width: 100%; }
   section.bg-white h1, section.bg-light h1 { font-size: 1.5rem; }
   section.bg-white p, section.bg-light p { font-size: 0.9rem; }
+}
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+  .card img { height: 180px; }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+  }
+  .card img { height: 150px; }
 }

@@ -27,7 +27,7 @@
     "id": 4,
     "nombre": "Pulsera de acero rolo",
     "precio": 2550,
-    "descripcion": "Acero rolo cierre marinero .",
+    "descripcion": "Acero rolo cierre marinero.",
     "img": "assets/images/Pulsera acero rolo cierre marinero.jpg",
     "categoria": "pulseras"
   },
@@ -62,5 +62,277 @@
     "descripcion": "Abridor de acero mariposa y cobrea x12 pares.",
     "img": "assets/images/Abridor acero mariposa y cobra x12 pares.jpg",
     "categoria": "abridores"
+  },
+  {
+    "id": 9,
+    "nombre": "Anillo Trenzado",
+    "precio": 1800,
+    "descripcion": "Anillo de acero trenzado simple.",
+    "img": "assets/images/anillo_trenzado.jpg",
+    "categoria": "anillos"
+  },
+  {
+    "id": 10,
+    "nombre": "Pulsera Minimalista",
+    "precio": 2100,
+    "descripcion": "Pulsera fina de acero inoxidable.",
+    "img": "assets/images/pulsera_minimalista.jpg",
+    "categoria": "pulseras"
+  },
+  {
+    "id": 11,
+    "nombre": "Cadena Simple",
+    "precio": 2900,
+    "descripcion": "Cadena sencilla de acero.",
+    "img": "assets/images/cadena_simple.jpg",
+    "categoria": "collares"
+  },
+  {
+    "id": 12,
+    "nombre": "Dije Corazón",
+    "precio": 950,
+    "descripcion": "Dije en forma de corazón de acero.",
+    "img": "assets/images/dije_corazon.jpg",
+    "categoria": "dijes/colgantes"
+  },
+  {
+    "id": 13,
+    "nombre": "Aros Circulares",
+    "precio": 1350,
+    "descripcion": "Aros simples de acero inoxidable.",
+    "img": "assets/images/aros_circulares.jpg",
+    "categoria": "aros"
+  },
+  {
+    "id": 14,
+    "nombre": "Abridor de Botellas",
+    "precio": 2200,
+    "descripcion": "Abridor de acero inoxidable.",
+    "img": "assets/images/abridor_botellas.jpg",
+    "categoria": "abridores"
+  },
+  {
+    "id": 15,
+    "nombre": "Anillo Doble",
+    "precio": 2000,
+    "descripcion": "Anillo doble de acero con diseño moderno.",
+    "img": "assets/images/anillo_doble.jpg",
+    "categoria": "anillos"
+  },
+  {
+    "id": 16,
+    "nombre": "Pulsera Charm Corazón",
+    "precio": 3200,
+    "descripcion": "Pulsera con charms de corazón.",
+    "img": "assets/images/pulsera_charm_corazon.jpg",
+    "categoria": "pulseras"
+  },
+  {
+    "id": 17,
+    "nombre": "Cadena Forzada",
+    "precio": 4500,
+    "descripcion": "Cadena de acero con eslabones forzados.",
+    "img": "assets/images/cadena_forzada.jpg",
+    "categoria": "collares"
+  },
+  {
+    "id": 18,
+    "nombre": "Dije Estrella",
+    "precio": 800,
+    "descripcion": "Dije en forma de estrella de acero.",
+    "img": "assets/images/dije_estrella.jpg",
+    "categoria": "dijes/colgantes"
+  },
+  {
+    "id": 19,
+    "nombre": "Aros Pendientes",
+    "precio": 1250,
+    "descripcion": "Aros colgantes de acero inox.",
+    "img": "assets/images/aros_pendientes.jpg",
+    "categoria": "aros"
+  },
+  {
+    "id": 20,
+    "nombre": "Abridor Llave",
+    "precio": 1800,
+    "descripcion": "Abridor en forma de llave de acero.",
+    "img": "assets/images/abridor_llave.jpg",
+    "categoria": "abridores"
+  },
+  {
+    "id": 21,
+    "nombre": "Anillo Cruz",
+    "precio": 1700,
+    "descripcion": "Anillo con cruz de acero.",
+    "img": "assets/images/anillo_cruz.jpg",
+    "categoria": "anillos"
+  },
+  {
+    "id": 22,
+    "nombre": "Pulsera Trenzada",
+    "precio": 2400,
+    "descripcion": "Pulsera de acero trenzada.",
+    "img": "assets/images/pulsera_trenzada.jpg",
+    "categoria": "pulseras"
+  },
+  {
+    "id": 23,
+    "nombre": "Cadena Vintage",
+    "precio": 3800,
+    "descripcion": "Cadena estilo vintage de acero.",
+    "img": "assets/images/cadena_vintage.jpg",
+    "categoria": "collares"
+  },
+  {
+    "id": 24,
+    "nombre": "Dije Luna",
+    "precio": 900,
+    "descripcion": "Dije en forma de luna de acero.",
+    "img": "assets/images/dije_luna.jpg",
+    "categoria": "dijes/colgantes"
+  },
+  {
+    "id": 25,
+    "nombre": "Aros Estilo Sol",
+    "precio": 1400,
+    "descripcion": "Aros con diseño de sol.",
+    "img": "assets/images/aros_sol.jpg",
+    "categoria": "aros"
+  },
+  {
+    "id": 26,
+    "nombre": "Abridor de Tapas",
+    "precio": 1900,
+    "descripcion": "Abridor para tapas de acero.",
+    "img": "assets/images/abridor_tapas.jpg",
+    "categoria": "abridores"
+  },
+  {
+    "id": 27,
+    "nombre": "Anillo Minimal",
+    "precio": 1500,
+    "descripcion": "Anillo simple minimalista de acero.",
+    "img": "assets/images/anillo_minimal.jpg",
+    "categoria": "anillos"
+  },
+  {
+    "id": 28,
+    "nombre": "Pulsera Onda",
+    "precio": 2600,
+    "descripcion": "Pulsera con diseño de ondas.",
+    "img": "assets/images/pulsera_onda.jpg",
+    "categoria": "pulseras"
+  },
+  {
+    "id": 29,
+    "nombre": "Cadena Elegante",
+    "precio": 4100,
+    "descripcion": "Cadena elegante de acero inoxidable.",
+    "img": "assets/images/cadena_elegante.jpg",
+    "categoria": "collares"
+  },
+  {
+    "id": 30,
+    "nombre": "Dije Corazón Rosa",
+    "precio": 950,
+    "descripcion": "Dije corazón rosa de acero.",
+    "img": "assets/images/dije_corazon_rosa.jpg",
+    "categoria": "dijes/colgantes"
+  },
+  {
+    "id": 31,
+    "nombre": "Aros Geométricos",
+    "precio": 1300,
+    "descripcion": "Aros de formas geométricas.",
+    "img": "assets/images/aros_geometricos.jpg",
+    "categoria": "aros"
+  },
+  {
+    "id": 32,
+    "nombre": "Abridor Círculo",
+    "precio": 1700,
+    "descripcion": "Abridor de acero en forma circular.",
+    "img": "assets/images/abridor_circulo.jpg",
+    "categoria": "abridores"
+  },
+  {
+    "id": 33,
+    "nombre": "Anillo Triple",
+    "precio": 2100,
+    "descripcion": "Anillo triple de acero inoxidable.",
+    "img": "assets/images/anillo_triple.jpg",
+    "categoria": "anillos"
+  },
+  {
+    "id": 34,
+    "nombre": "Pulsera Doble",
+    "precio": 3300,
+    "descripcion": "Pulsera doble de acero con charms.",
+    "img": "assets/images/pulsera_doble.jpg",
+    "categoria": "pulseras"
+  },
+  {
+    "id": 35,
+    "nombre": "Cadena Mediana",
+    "precio": 3600,
+    "descripcion": "Cadena de acero mediana.",
+    "img": "assets/images/cadena_mediana.jpg",
+    "categoria": "collares"
+  },
+  {
+    "id": 36,
+    "nombre": "Dije Sol",
+    "precio": 1100,
+    "descripcion": "Dije con sol de acero.",
+    "img": "assets/images/dije_sol.jpg",
+    "categoria": "dijes/colgantes"
+  },
+  {
+    "id": 37,
+    "nombre": "Aros Largos",
+    "precio": 1550,
+    "descripcion": "Aros largos de acero inox.",
+    "img": "assets/images/aros_largos.jpg",
+    "categoria": "aros"
+  },
+  {
+    "id": 38,
+    "nombre": "Abridor Cuadrado",
+    "precio": 1800,
+    "descripcion": "Abridor de acero cuadrado.",
+    "img": "assets/images/abridor_cuadrado.jpg",
+    "categoria": "abridores"
+  },
+  {
+    "id": 39,
+    "nombre": "Anillo Corazón",
+    "precio": 1700,
+    "descripcion": "Anillo con corazón de acero.",
+    "img": "assets/images/anillo_corazon.jpg",
+    "categoria": "anillos"
+  },
+  {
+    "id": 40,
+    "nombre": "Pulsera Elegante",
+    "precio": 3500,
+    "descripcion": "Pulsera elegante de acero inoxidable.",
+    "img": "assets/images/pulsera_elegante.jpg",
+    "categoria": "pulseras"
+  },
+  {
+    "id": 41,
+    "nombre": "Cadena Fina",
+    "precio": 4000,
+    "descripcion": "Cadena fina de acero inoxidable, elegante y sencilla.",
+    "img": "assets/images/cadena_fina.jpg",
+    "categoria": "collares"
+  },
+  {
+    "id": 42,
+    "nombre": "Dije Luna y Estrella",
+    "precio": 1250,
+    "descripcion": "Dije de acero con diseño de luna y estrella.",
+    "img": "assets/images/dije_luna_estrella.jpg",
+    "categoria": "dijes/colgantes"
   }
 ]
