@@ -156,11 +156,14 @@ section.bg-light .btn-morado:hover {
 }
 
 .btn-warning {
-  background-color: #fcd34d;
-  color: #000;
+  background-color: #e58afc;
+  color: #ffffff;
   border: none;
 }
-
+.btn-warning:hover {
+  background-color: #d9a1ff; /* rosa/violeta claro */
+  color: #fff;
+}
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
