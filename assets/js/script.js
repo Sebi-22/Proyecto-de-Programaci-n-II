@@ -1,5 +1,14 @@
 import { Producto } from "./productos.js";
 
+// Carrito (import dinámico)
+let carritoModule = null;
+async function getCarritoModule() {
+  if (!carritoModule) {
+    carritoModule = await import("./carrito.js");
+  }
+  return carritoModule;
+}
+
 let productos = [];
 
 // --- Modal ---
@@ -36,6 +45,7 @@ function mostrarModal(id) {
     <img src="${producto.img}" class="img-fluid mb-3" alt="${producto.nombre}">
     <p>Precio: $${producto.precio}</p>
     <p>${producto.descripcion}</p>
+    <button class="btn btn-warning w-100 mt-3" id="btnAddCarrito">Agregar al carrito 🛒</button>
   `;
 
   modalInstance.show();

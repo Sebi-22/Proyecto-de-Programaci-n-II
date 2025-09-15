@@ -1,16 +1,23 @@
 import { Producto } from "./productos.js";
 
+// Carrito (import dinámico)
+let carritoModule = null;
+async function getCarritoModule() {
+  if (!carritoModule) {
+    carritoModule = await import("./carrito.js");
+  }
+  return carritoModule;
+}
+
 let productos = [];
 
 // --- Modal ---
 const modalEl = document.getElementById("productModal");
 let modalInstance = null;
 
-// Detectar basePath (si estás en /pages/)
+// Detectar basePath
 let basePath = "";
-if (window.location.pathname.includes("/pages/")) {
-  basePath = "../";
-}
+if (window.location.pathname.includes("/pages/")) basePath = "../";
 
 function initModalOnce() {
   if (!modalEl) return;
@@ -75,7 +82,23 @@ function renderProductos(filtrados = productos, containerId = "productos") {
     btn.classList.add("btn", "btn-ver-mas"); // misma clase para todos
     btn.addEventListener("click", () => mostrarModal(p.id));
 
-    cardBody.append(h5, desc, precio, btn);
+    const btnCarrito = document.createElement("button");
+    btnCarrito.type = "button";
+    btnCarrito.textContent = "Agregar al carrito 🛒";
+    btnCarrito.classList.add("btn", "btn-warning", "ms-2");
+    btnCarrito.addEventListener("click", async () => {
+      const { agregarAlCarrito } = await getCarritoModule();
+      agregarAlCarrito({
+        id: p.id,
+        nombre: p.nombre,
+        precio: p.precio,
+        descripcion: p.descripcion,
+        img: p.img,
+        categoria: p.categoria
+      });
+    });
+
+    cardBody.append(h5, desc, precio, btn, btnCarrito);
     card.append(img, cardBody);
     col.appendChild(card);
     container.appendChild(col);
@@ -111,7 +134,6 @@ fetch(basePath + "assets/js/productos.json")
   })
   .catch((err) => console.error("Error cargando productos:", err));
 
-// --- Init modal ---
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initModalOnce);
 } else {

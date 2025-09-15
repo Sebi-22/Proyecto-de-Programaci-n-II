@@ -1,128 +1,119 @@
-import { productos } from "./productos.js"; // Array de productos
-
-let carrito = []; // Array del carrito
-
-// ---- Cargar carrito ----
-function cargarCarrito() {
-  let data = localStorage.carrito || "[]";
-  try {
-    carrito = (new Function("return " + data))();
-    if (!Array.isArray(carrito)) carrito = [];
-  } catch {
-    carrito = [];
-  }
+// --- Inicializar carrito desde localStorage ---
+let carrito = [];
+try {
+  const data = localStorage.getItem("carrito");
+  carrito = data ? JSON.parse(data) : [];
+} catch (e) {
+  console.error("⚠️ Error al leer carrito del localStorage:", e);
+  carrito = [];
+  localStorage.removeItem("carrito");
 }
 
-// ---- Guardar carrito ----
-function guardarCarrito() {
-  let resultado = "[";
-  for (let i = 0; i < carrito.length; i++) {
-    let item = carrito[i];
-    let props = "{";
-    let primera = true;
-    for (let key in item) {
-      if (!primera) props += ",";
-      props += key + ':"' + item[key] + '"';
-      primera = false;
-    }
-    props += "}";
-    resultado += props;
-    if (i < carrito.length - 1) resultado += ",";
-  }
-  resultado += "]";
-  localStorage.carrito = resultado;
-}
-
-// ---- Agregar producto al carrito ----
-function agregarAlCarrito(id, cantidad) {
-  let encontrado = false;
-  for (let i = 0; i < carrito.length; i++) {
-    if (carrito[i].id == id) {
-      carrito[i].cantidad += cantidad;
-      encontrado = true;
-      break;
-    }
-  }
-  if (!encontrado) {
-    carrito.push({ id: id, cantidad: cantidad });
-  }
-  guardarCarrito();
-  actualizarContadorCarrito();
-  renderCarrito();
-}
-
-// ---- Actualizar contador ----
-function actualizarContadorCarrito() {
-  let total = 0;
-  for (let i = 0; i < carrito.length; i++) {
-    total += carrito[i].cantidad;
-  }
+// --- Actualizar badge ---
+function actualizarBadge() {
   const badge = document.querySelector(".bi-cart-fill + span");
-  if (badge) badge.textContent = total;
+  if (badge) badge.textContent = carrito.length;
 }
 
-// ---- Eliminar producto ----
-function eliminarDelCarrito(id) {
-  let nuevoCarrito = [];
-  for (let i = 0; i < carrito.length; i++) {
-    if (carrito[i].id != id) {
-      nuevoCarrito[nuevoCarrito.length] = carrito[i];
-    }
+// --- Guardar carrito ---
+function guardarCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarBadge();
+}
+
+// --- Agregar producto ---
+function agregarAlCarrito(producto) {
+  if (!producto || !producto.id || !producto.nombre || producto.precio == null) {
+    console.error("Producto inválido:", producto);
+    alert("❌ No se pudo agregar el producto al carrito.");
+    return;
   }
-  carrito = nuevoCarrito;
+  carrito.push({ ...producto });
   guardarCarrito();
-  actualizarContadorCarrito();
+  alert(`✅ ${producto.nombre} agregado al carrito`);
   renderCarrito();
 }
 
-// ---- Mostrar carrito ----
+// --- Eliminar producto ---
+function eliminarDelCarrito(id) {
+  carrito = carrito.filter((p) => p.id !== id);
+  guardarCarrito();
+  renderCarrito();
+}
+
+// --- Render carrito ---
 function renderCarrito() {
-  const contenedor = document.getElementById("listaCarrito");
-  contenedor.innerHTML = "";
+  const container = document.getElementById("listaCarrito");
+  const totalEl = document.getElementById("totalCarrito");
+  if (!container) return;
+
+  container.innerHTML = "";
 
   if (carrito.length === 0) {
-    contenedor.innerHTML = "<p>No hay productos en el carrito</p>";
+    container.innerHTML = `<p class="text-center">El carrito está vacío 🛒</p>`;
+    if (totalEl) totalEl.textContent = "$0";
     return;
   }
 
-  for (let i = 0; i < carrito.length; i++) {
-    let item = carrito[i];
-    let producto = null;
+  carrito.forEach((p) => {
+    const item = document.createElement("div");
+    item.className = "d-flex justify-content-between align-items-center border-bottom p-2";
+    item.innerHTML = `
+      <div>
+        <strong>${p.nombre}</strong><br>
+        <small>$${p.precio}</small>
+      </div>
+      <button class="btn btn-sm btn-danger">Eliminar</button>
+    `;
 
-    for (let j = 0; j < productos.length; j++) {
-      if (productos[j].id == item.id) {
-        producto = productos[j];
-        break;
-      }
-    }
+    item.querySelector("button").addEventListener("click", () => eliminarDelCarrito(p.id));
+    container.appendChild(item);
+  });
 
-    if (producto) {
-      const div = document.createElement("div");
-      div.className = "d-flex justify-content-between align-items-center border p-2 mb-2";
-      div.innerHTML = `
-        <div>
-          <strong>${producto.nombre}</strong> <br>
-          Cantidad: ${item.cantidad} <br>
-          Precio: $${producto.precio * item.cantidad}
-        </div>
-        <button class="btn btn-danger btn-sm" data-id="${producto.id}">
-          <i class="bi bi-trash"></i> Eliminar
-        </button>
-      `;
-      div.querySelector("button").addEventListener("click", function() {
-        eliminarDelCarrito(this.dataset.id);
-      });
-      contenedor.appendChild(div);
-    }
-  }
+  const total = carrito.reduce((acc, p) => acc + p.precio, 0);
+  if (totalEl) totalEl.textContent = `$${total}`;
 }
 
-// ---- Inicializar ----
-document.addEventListener("DOMContentLoaded", function() {
-  cargarCarrito();
-  actualizarContadorCarrito();
+// --- Inicialización ---
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarBadge();
   renderCarrito();
+
+  const btnPagar = document.getElementById("btnPagar");
+  if (btnPagar) {
+    btnPagar.addEventListener("click", () => {
+      if (carrito.length === 0) {
+        alert("❌ El carrito está vacío");
+        return;
+      }
+      alert("✅ Redirigiendo a la pasarela de pago...");
+      // ✅ Aquí va tu link de pago
+      window.location.href = "https://link.mercadopago.com.ar/mazalparatodos";
+    });
+  }
 });
 
-// ---- Exportaciones ----
-export { actualizarContadorCarrito, eliminarDelCarrito, renderCarrito, agregarAlCarrito };
+export { agregarAlCarrito };
+
+
+// Botón de volver a la página principal
+const btnVolver = document.getElementById("btnVolver");
+if (btnVolver) {
+  btnVolver.addEventListener("click", () => {
+    window.location.href = "../index.html"; // Cambiar según la ruta de tu página principal
+  });
+}
+
+// Botón de pagar (ya está en carrito.js, pero si querés modificar link lo podés hacer aquí también)
+const btnPagar = document.getElementById("btnPagar");
+if (btnPagar) {
+  btnPagar.addEventListener("click", () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length === 0) {
+      alert("❌ El carrito está vacío");
+      return;
+    }
+    alert("✅ Redirigiendo a la pasarela de pago...");
+    window.location.href = "https://link.mercadopago.com.ar/mazalparatodos";
+  });
+}
