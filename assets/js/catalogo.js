@@ -3,12 +3,12 @@ import { Producto } from "./productos.js";
 let productos = [];
 
 // --- Modal ---
-const modalEl = document.getElementById("productModal");
+const modalEl = document.getElementById("productModal"); // getElementById busca un elemento HTML por su id
 let modalInstance = null;
 
 // Detectar basePath (si estás en /pages/)
 let basePath = "";
-if (window.location.pathname.includes("/pages/")) {
+if (window.location.pathname.includes("/pages/")) { // includes revisa si la ruta contiene "/pages/"
   basePath = "../";
 }
 
@@ -17,30 +17,30 @@ function initModalOnce() {
   modalInstance = new bootstrap.Modal(modalEl);
 
   modalEl.addEventListener("shown.bs.modal", () => {
-    const closeBtn = modalEl.querySelector(".btn-close");
-    if (closeBtn) closeBtn.focus();
-    setInertOnBackground(true);
+    const closeBtn = modalEl.querySelector(".btn-close"); // find (querySelector) busca un elemento dentro de otro
+    if (closeBtn) closeBtn.focus(); // focus pone el cursor/selección en ese botón
+    setInertOnBackground(true); // bloquea el fondo para que no se pueda interactuar
   });
 
   modalEl.addEventListener("hidden.bs.modal", () => {
-    document.activeElement && document.activeElement.blur();
-    setInertOnBackground(false);
+    document.activeElement && document.activeElement.blur(); // blur quita el foco del elemento activo
+    setInertOnBackground(false); // desbloquea el fondo
   });
 }
 
 function setInertOnBackground(enable) {
-  Array.from(document.body.children).forEach(child => {
+  Array.from(document.body.children).forEach(child => { // from convierte los hijos del body en un array
     if (child === modalEl) return;
-    if (child.classList && child.classList.contains("modal-backdrop")) return;
+    if (child.classList && child.classList.contains("modal-backdrop")) return; // contains revisa si tiene la clase
     if (child.nodeName === "SCRIPT" || child.nodeName === "TEMPLATE") return;
-    if (enable) child.setAttribute("inert", "");
-    else child.removeAttribute("inert");
+    if (enable) child.setAttribute("inert", ""); // setAttribute agrega un atributo HTML
+    else child.removeAttribute("inert"); // removeAttribute quita un atributo HTML
   });
 }
 
 // --- Modal con carrito ---
 function mostrarModal(id) {
-  const producto = productos.find(p => p.id == id);
+  const producto = productos.find(p => p.id == id); // find busca el primer producto que cumpla la condición
   if (!producto) return;
 
   if (!modalInstance) initModalOnce();
@@ -69,21 +69,21 @@ function mostrarModal(id) {
     eliminarDelCarrito(producto.id);
   });
 
-  modalInstance.show();
+  modalInstance.show(); // show muestra el modal
 }
 
 // --- Carrito ---
 function agregarAlCarrito(id) {
-  let carrito = localStorage.getItem("carrito") || "";
+  let carrito = localStorage.getItem("carrito") || ""; // getItem lee datos guardados en localStorage
   let nuevoCarrito = "";
   let encontrado = false;
 
   if (carrito !== "") {
-    const items = carrito.split(";");
+    const items = carrito.split(";"); // split divide el texto en partes usando ";"
     for (let i = 0; i < items.length; i++) {
       if (items[i] === "") continue;
-      const [itemId, cantStr] = items[i].split(",");
-      let cant = parseInt(cantStr);
+      const [itemId, cantStr] = items[i].split(","); // split divide cada item en id y cantidad
+      let cant = parseInt(cantStr); // parseInt convierte un texto en número
 
       if (itemId == id) {
         cant += 1;
@@ -94,7 +94,7 @@ function agregarAlCarrito(id) {
   }
   if (!encontrado) nuevoCarrito += id + ",1;";
 
-  localStorage.setItem("carrito", nuevoCarrito);
+  localStorage.setItem("carrito", nuevoCarrito); // setItem guarda los datos en localStorage
   actualizarContadorCarrito();
 }
 
@@ -124,12 +124,12 @@ function actualizarContadorCarrito() {
     const items = carrito.split(";");
     for (let i = 0; i < items.length; i++) {
       if (items[i] === "") continue;
-      const [, cantStr] = items[i].split(",");//split es un método de JavaScript para strings que sirve para dividir un texto en partes usando un separador.
-      total += parseInt(cantStr);
+      const [, cantStr] = items[i].split(","); // split divide el texto
+      total += parseInt(cantStr); // parseInt convierte a número
     }
   }
 
-  const badge = document.querySelector(".bi-cart-fill + .badge");
+  const badge = document.querySelector(".bi-cart-fill + .badge"); // find (querySelector) busca el elemento del contador
   if (badge) badge.textContent = total;
 }
 
@@ -188,7 +188,7 @@ function aplicarFiltros() {
   // filtro de precio
   const valorPrecio = document.getElementById("filtroPrecio")?.value;
   if (valorPrecio === "0-3000") {
-    filtrados = filtrados.filter(p => p.precio <= 3000);
+    filtrados = filtrados.filter(p => p.precio <= 3000); // filter crea un nuevo array con los que cumplen la condición
   } else if (valorPrecio === "3001-5000") {
     filtrados = filtrados.filter(p => p.precio >= 3001 && p.precio <= 5000);
   } else if (valorPrecio === "5001-10000") {
@@ -201,19 +201,17 @@ function aplicarFiltros() {
     filtrados = filtrados.filter(p => p.categoria === valorCat);
   }
 
-  // renderizar productos filtrados
   renderProductos(filtrados);
 }
-
 
 document.getElementById("filtroPrecio")?.addEventListener("change", aplicarFiltros);
 document.getElementById("filtroCategoria")?.addEventListener("change", aplicarFiltros);
 
 // --- Cargar productos ---
-fetch(basePath + "assets/js/productos.json")
+fetch(basePath + "assets/js/productos.json") // fetch pide un archivo o API
   .then(res => res.json())
   .then(data => {
-    data.forEach(p => {
+    data.forEach(p => { // forEach recorre todos los productos
       productos.push(new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img, p.categoria));
     });
     renderProductos();
@@ -223,7 +221,7 @@ fetch(basePath + "assets/js/productos.json")
 
 // --- Init modal ---
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initModalOnce);
+  document.addEventListener("DOMContentLoaded", initModalOnce); // cuando la página termina de cargar
 } else {
   initModalOnce();
 }
