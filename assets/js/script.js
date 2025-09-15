@@ -4,16 +4,29 @@ let productos = [];
 
 // --- Modal ---
 const modalEl = document.getElementById("productModal");
+let modalInstance = null;
+
+// Inicializar instancia de Bootstrap Modal
+document.addEventListener("DOMContentLoaded", () => {
+  if (modalEl) {
+    modalInstance = new bootstrap.Modal(modalEl);
+  }
+});
 
 // --- Buscar producto por id ---
 function buscarProductoPorId(id) {
-  return productos.find(p => p.id == id) || null;
+  for (let i = 0; i < productos.length; i++) {
+    if (productos[i].id == id) {
+      return productos[i];
+    }
+  }
+  return null;
 }
 
 // --- Mostrar modal ---
 function mostrarModal(id) {
   const producto = buscarProductoPorId(id);
-  if (!producto || !modalEl) return;
+  if (!producto || !modalInstance) return;
 
   const modalTitle = modalEl.querySelector("#productModalLabel");
   const modalBody = modalEl.querySelector(".modal-body");
@@ -25,9 +38,13 @@ function mostrarModal(id) {
     <p>${producto.descripcion}</p>
   `;
 
-  // --- Usar Bootstrap para abrir el modal ---
-  const modalBootstrap = new bootstrap.Modal(modalEl);
-  modalBootstrap.show();
+  modalInstance.show();
+}
+
+// --- Cerrar modal ---
+function cerrarModal() {
+  if (!modalInstance) return;
+  modalInstance.hide();
 }
 
 // --- Render destacados ---
@@ -36,11 +53,13 @@ function renderDestacados() {
   if (!container) return;
   container.innerHTML = "";
 
-  const limite = Math.min(productos.length, 3);
+  const limite = productos.length < 3 ? productos.length : 3;
 
-  productos.slice(0, limite).forEach(p => {
+  for (let i = 0; i < limite; i++) {
+    const p = productos[i];
+
     const card = document.createElement("div");
-    card.className = "card p-3 shadow-sm text-center";
+    card.className = "card p-3 shadow-sm text-center mb-3";
 
     const img = document.createElement("img");
     img.src = p.img;
@@ -59,47 +78,52 @@ function renderDestacados() {
     const btnVer = document.createElement("button");
     btnVer.type = "button";
     btnVer.textContent = "Ver más";
-    btnVer.className = "btn btn-outline-secondary m-1";
-    btnVer.addEventListener("click", () => mostrarModal(p.id));
+    btnVer.dataset.id = p.id;
+    btnVer.className = "btn btn-ver-mas m-1"; // clase unificada
+    btnVer.onclick = function () {
+      mostrarModal(this.dataset.id);
+    };
 
-    card.append(img, h3, desc, precio, btnVer);
+    card.appendChild(img);
+    card.appendChild(h3);
+    card.appendChild(desc);
+    card.appendChild(precio);
+    card.appendChild(btnVer);
+
     container.appendChild(card);
-  });
+  }
 }
 
 // --- Cargar productos desde JSON ---
 fetch("./assets/js/productos.json")
-  .then(res => res.json())
-  .then(data => {
-    data.forEach(p => {
-      productos.push(new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img));
-    });
+  .then((res) => res.json())
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      const p = data[i];
+      productos.push(
+        new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img)
+      );
+    }
     renderDestacados();
   })
-  .catch(err => console.error("Error cargando productos:", err));
+  .catch((err) => console.error("Error cargando productos:", err));
 
-// Loader
+// --- Loader ---
 document.addEventListener("DOMContentLoaded", async () => {
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const loader = document.getElementById("loader");
   if (loader) loader.classList.add("hidden");
 });
 
-export { productos, mostrarModal,renderDestacados };
-
-
-
-// Gestión de sesión y actualización del navbar
+// --- Gestión de sesión y actualización del navbar ---
 document.addEventListener("DOMContentLoaded", () => {
-  const usuario = JSON.parse(localStorage.getItem("usuario"));//parse es un método que convierte un string en un objeto y getItem es un método que obtiene el valor de una clave en el almacenamiento local
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
   const navCuenta = document.getElementById("navCuenta");
   const navCuentaText = document.getElementById("navCuentaText");
 
   if (usuario && navCuenta && navCuentaText) {
-    // Cambiar el texto del botón de cuenta
     navCuentaText.textContent = usuario.email;
 
-    // Reemplazar menú con perfil, pedidos y cerrar sesión
     navCuenta.querySelector(".dropdown-menu").innerHTML = `
       <li><a class="dropdown-item" href="pages/miPerfil.html">Mi Perfil</a></li>
       <li><a class="dropdown-item" href="pages/pedidos.html">Mis Pedidos</a></li>
@@ -107,11 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <li><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a></li>
     `;
 
-    // Evento cerrar sesión
     document.getElementById("cerrarSesion").addEventListener("click", () => {
       localStorage.removeItem("usuario");
-      window.location.reload(); // recarga la página para actualizar navbar
+      window.location.reload();
     });
   }
 });
 
+export { productos, mostrarModal, renderDestacados };
