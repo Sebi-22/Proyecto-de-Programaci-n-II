@@ -15,7 +15,6 @@ let productos = [];
 const modalEl = document.getElementById("productModal");
 let modalInstance = null;
 
-// Inicializar instancia de Bootstrap Modal
 document.addEventListener("DOMContentLoaded", () => {
   if (modalEl) {
     modalInstance = new bootstrap.Modal(modalEl);
@@ -24,12 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- Buscar producto por id ---
 function buscarProductoPorId(id) {
-  for (let i = 0; i < productos.length; i++) {
-    if (productos[i].id == id) {
-      return productos[i];
-    }
-  }
-  return null;
+  return productos.find((p) => p.id === Number(id)) || null;
 }
 
 // --- Mostrar modal ---
@@ -48,13 +42,21 @@ function mostrarModal(id) {
     <button class="btn btn-warning w-100 mt-3" id="btnAddCarrito">Agregar al carrito 🛒</button>
   `;
 
-  modalInstance.show();
-}
+  modalBody.querySelector("#btnAddCarrito").addEventListener("click", async () => {
+    const { agregarAlCarrito } = await getCarritoModule();
+    if (!producto) return console.error("Producto inválido al agregar al carrito");
+    agregarAlCarrito({
+      id: producto.id,
+      nombre: producto.nombre,
+      precio: producto.precio,
+      descripcion: producto.descripcion,
+      img: producto.img,
+      categoria: producto.categoria
+    });
+    modalInstance.hide();
+  });
 
-// --- Cerrar modal ---
-function cerrarModal() {
-  if (!modalInstance) return;
-  modalInstance.hide();
+  modalInstance.show();
 }
 
 // --- Render destacados ---
@@ -63,7 +65,7 @@ function renderDestacados() {
   if (!container) return;
   container.innerHTML = "";
 
-  const limite = productos.length < 3 ? productos.length : 3;
+  const limite = Math.min(productos.length, 3);
 
   for (let i = 0; i < limite; i++) {
     const p = productos[i];
@@ -89,17 +91,28 @@ function renderDestacados() {
     btnVer.type = "button";
     btnVer.textContent = "Ver más";
     btnVer.dataset.id = p.id;
-    btnVer.className = "btn btn-ver-mas m-1"; // clase unificada
+    btnVer.className = "btn btn-ver-mas m-1";
     btnVer.onclick = function () {
       mostrarModal(this.dataset.id);
     };
 
-    card.appendChild(img);
-    card.appendChild(h3);
-    card.appendChild(desc);
-    card.appendChild(precio);
-    card.appendChild(btnVer);
+    const btnCarrito = document.createElement("button");
+    btnCarrito.type = "button";
+    btnCarrito.textContent = "Agregar al carrito 🛒";
+    btnCarrito.className = "btn btn-warning m-1";
+    btnCarrito.addEventListener("click", async () => {
+      const { agregarAlCarrito } = await getCarritoModule();
+      agregarAlCarrito({
+        id: p.id,
+        nombre: p.nombre,
+        precio: p.precio,
+        descripcion: p.descripcion,
+        img: p.img,
+        categoria: p.categoria
+      });
+    });
 
+    card.append(img, h3, desc, precio, btnVer, btnCarrito);
     container.appendChild(card);
   }
 }
@@ -108,12 +121,9 @@ function renderDestacados() {
 fetch("./assets/js/productos.json")
   .then((res) => res.json())
   .then((data) => {
-    for (let i = 0; i < data.length; i++) {
-      const p = data[i];
-      productos.push(
-        new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img)
-      );
-    }
+    data.forEach((p) => {
+      productos.push(new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img, p.categoria));
+    });
     renderDestacados();
   })
   .catch((err) => console.error("Error cargando productos:", err));
@@ -125,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (loader) loader.classList.add("hidden");
 });
 
-// --- Gestión de sesión y actualización del navbar ---
+// --- Gestión de sesión ---
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   const navCuenta = document.getElementById("navCuenta");
