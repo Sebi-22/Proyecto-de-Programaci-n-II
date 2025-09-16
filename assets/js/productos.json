@@ -97,10 +97,10 @@
   },
   {
     "id": 13,
-    "nombre": "Aros Circulares",
-    "precio": 1350,
-    "descripcion": "Aros simples de acero inoxidable.",
-    "img": "assets/images/aros_circulares.jpg",
+    "nombre": "Aros Flor Colgante",
+    "precio": 2750,
+    "descripcion": "Aros flor colgante de acero.",
+    "img": "assets/images/Aro flor colgante.jpg",
     "categoria": "aros"
   },
   {
@@ -145,10 +145,10 @@
   },
   {
     "id": 19,
-    "nombre": "Aros Pendientes",
-    "precio": 1250,
-    "descripcion": "Aros colgantes de acero inox.",
-    "img": "assets/images/aros_pendientes.jpg",
+    "nombre": "Aros trepadores bolitas xunidad ",
+    "precio": 1050,
+    "descripcion": "Aros trepador bolitas de acero",
+    "img": "assets/images/Aros trepadores.jpg",
     "categoria": "aros"
   },
   {
@@ -193,10 +193,10 @@
   },
   {
     "id": 25,
-    "nombre": "Aros Estilo Sol",
-    "precio": 1400,
-    "descripcion": "Aros con diseño de sol.",
-    "img": "assets/images/aros_sol.jpg",
+    "nombre": "Aros Lady Di colgante con perla",
+    "precio": 3360,
+    "descripcion": "Aros Lady Di colgante con perla.",
+    "img": "assets/images/Aros ladie die colgante con perla.jpg",
     "categoria": "aros"
   },
   {
@@ -241,10 +241,10 @@
   },
   {
     "id": 31,
-    "nombre": "Aros Geométricos",
-    "precio": 1300,
-    "descripcion": "Aros de formas geométricas.",
-    "img": "assets/images/aros_geometricos.jpg",
+    "nombre": "Aros formita",
+    "precio": 850,
+    "descripcion": "Aros formita clave de sol.",
+    "img": "assets/images/Aros Formita.jpg",
     "categoria": "aros"
   },
   {
@@ -289,10 +289,10 @@
   },
   {
     "id": 37,
-    "nombre": "Aros Largos",
-    "precio": 1550,
-    "descripcion": "Aros largos de acero inox.",
-    "img": "assets/images/aros_largos.jpg",
+    "nombre": "Aros Argoya ",
+    "precio": 1630,
+    "descripcion": "Aros argoya de acero redondo.",
+    "img": "assets/images/Aros arogya.jpg",
     "categoria": "aros"
   },
   {
