@@ -10,7 +10,7 @@
   {
     "id": 2,
     "nombre": "Pulsera de acero CHARMS",
-    "precio": 6195,
+    "precio": 12100,
     "descripcion": "Acero CHARMS osos marron.",
     "img": "assets/images/Pulsera acero CHARMS Oso marron.jpg",
     "categoria": "pulseras"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "nombre": "Pulsera de acero rolo",
-    "precio": 2550,
+    "precio": 10250,
     "descripcion": "Acero rolo cierre marinero.",
     "img": "assets/images/Pulsera acero rolo cierre marinero.jpg",
     "categoria": "pulseras"
@@ -73,10 +73,10 @@
   },
   {
     "id": 10,
-    "nombre": "Pulsera Minimalista",
-    "precio": 2100,
-    "descripcion": "Pulsera fina de acero inoxidable.",
-    "img": "assets/images/pulsera_minimalista.jpg",
+    "nombre": "Pulsera de acero",
+    "precio": 14300,
+    "descripcion": "Pulsera de acero .",
+    "img": "assets/images/Pulsera de acero.jpg",
     "categoria": "pulseras"
   },
   {
@@ -89,10 +89,10 @@
   },
   {
     "id": 12,
-    "nombre": "Dije Corazón",
-    "precio": 950,
-    "descripcion": "Dije en forma de corazón de acero.",
-    "img": "assets/images/dije_corazon.jpg",
+    "nombre": "Dije de llave",
+    "precio": 4820,
+    "descripcion": "Dije en forma de llave.",
+    "img": "assets/images/Dije de llave.jpg",
     "categoria": "dijes/colgantes"
   },
   {
@@ -105,10 +105,10 @@
   },
   {
     "id": 14,
-    "nombre": "Abridor de Botellas",
-    "precio": 2200,
-    "descripcion": "Abridor de acero inoxidable.",
-    "img": "assets/images/abridor_botellas.jpg",
+    "nombre": "Abridor Corazon Liso",
+    "precio": 2550,
+    "descripcion": "Abridor de acero quirurgico corazon.",
+    "img": "assets/images/Abridores corazon liso.jpg",
     "categoria": "abridores"
   },
   {
@@ -121,10 +121,10 @@
   },
   {
     "id": 16,
-    "nombre": "Pulsera Charm Corazón",
-    "precio": 3200,
-    "descripcion": "Pulsera con charms de corazón.",
-    "img": "assets/images/pulsera_charm_corazon.jpg",
+    "nombre": "Pulsera con dijes colgantes símbolo de la paz",
+    "precio": 13820,
+    "descripcion": "Pulsera de acero con dijes colgantes símbolo de la paz.",
+    "img": "assets/images/Pulsera con dijes colgantes simbolo de la paz.jpg",
     "categoria": "pulseras"
   },
   {
@@ -137,10 +137,10 @@
   },
   {
     "id": 18,
-    "nombre": "Dije Estrella",
-    "precio": 800,
-    "descripcion": "Dije en forma de estrella de acero.",
-    "img": "assets/images/dije_estrella.jpg",
+    "nombre": "Dije Infinito",
+    "precio": 4335,
+    "descripcion": "Dije en forma de infinito.",
+    "img": "assets/images/Dije en forma de infiito.jpg",
     "categoria": "dijes/colgantes"
   },
   {
@@ -153,10 +153,10 @@
   },
   {
     "id": 20,
-    "nombre": "Abridor Llave",
-    "precio": 1800,
-    "descripcion": "Abridor en forma de llave de acero.",
-    "img": "assets/images/abridor_llave.jpg",
+    "nombre": "Abridor con perla",
+    "precio": 3300,
+    "descripcion": "Abridor con perla de acero.",
+    "img": "assets/images/Abridor con perla.jpg",
     "categoria": "abridores"
   },
   {
@@ -169,10 +169,10 @@
   },
   {
     "id": 22,
-    "nombre": "Pulsera Trenzada",
-    "precio": 2400,
-    "descripcion": "Pulsera de acero trenzada.",
-    "img": "assets/images/pulsera_trenzada.jpg",
+    "nombre": "Pulsera Chata",
+    "precio": 17640,
+    "descripcion": "Pulsera de acero chata.",
+    "img": "assets/images/Pulsera chata.jpg",
     "categoria": "pulseras"
   },
   {
@@ -185,10 +185,10 @@
   },
   {
     "id": 24,
-    "nombre": "Dije Luna",
-    "precio": 900,
-    "descripcion": "Dije en forma de luna de acero.",
-    "img": "assets/images/dije_luna.jpg",
+    "nombre": "Dije mini arbol de la vida",
+    "precio": 2770,
+    "descripcion": "Dije mini arbol de la vida de acero.",
+    "img": "assets/images/Dije mini arbol de la vida.jpg",
     "categoria": "dijes/colgantes"
   },
   {
@@ -201,10 +201,10 @@
   },
   {
     "id": 26,
-    "nombre": "Abridor de Tapas",
-    "precio": 1900,
-    "descripcion": "Abridor para tapas de acero.",
-    "img": "assets/images/abridor_tapas.jpg",
+    "nombre": "Abridor de piedra",
+    "precio": 2970,
+    "descripcion": "Abridor de piedra en acero.",
+    "img": "assets/images/Abridor con piedra.jpg",
     "categoria": "abridores"
   },
   {
@@ -217,10 +217,10 @@
   },
   {
     "id": 28,
-    "nombre": "Pulsera Onda",
-    "precio": 2600,
-    "descripcion": "Pulsera con diseño de ondas.",
-    "img": "assets/images/pulsera_onda.jpg",
+    "nombre": "Pulsera con piedras",
+    "precio": 20150,
+    "descripcion": "Pulsera con piedras .",
+    "img": "assets/images/Pulsera con piedras.jpg",
     "categoria": "pulseras"
   },
   {
@@ -233,10 +233,10 @@
   },
   {
     "id": 30,
-    "nombre": "Dije Corazón Rosa",
-    "precio": 950,
-    "descripcion": "Dije corazón rosa de acero.",
-    "img": "assets/images/dije_corazon_rosa.jpg",
+    "nombre": "Dije Corazón",
+    "precio": 3990,
+    "descripcion": "Dije corazón para mamá.",
+    "img": "assets/images/Dije en forma de corazon para mamá.jpg",
     "categoria": "dijes/colgantes"
   },
   {
@@ -249,10 +249,10 @@
   },
   {
     "id": 32,
-    "nombre": "Abridor Círculo",
-    "precio": 1700,
-    "descripcion": "Abridor de acero en forma circular.",
-    "img": "assets/images/abridor_circulo.jpg",
+    "nombre": "Abridor con forma de frutilla",
+    "precio": 2700,
+    "descripcion": "Abridor de acero en forma de frutilla.",
+    "img": "assets/images/Abridor de frutilla.jpg",
     "categoria": "abridores"
   },
   {
@@ -265,10 +265,10 @@
   },
   {
     "id": 34,
-    "nombre": "Pulsera Doble",
-    "precio": 3300,
-    "descripcion": "Pulsera doble de acero con charms.",
-    "img": "assets/images/pulsera_doble.jpg",
+    "nombre": "Pulsera con corazón de color",
+    "precio": 11630,
+    "descripcion": "Pulsera de acero con corazon de color.",
+    "img": "assets/images/Pulsera con corazon de color.jpg",
     "categoria": "pulseras"
   },
   {
@@ -281,10 +281,10 @@
   },
   {
     "id": 36,
-    "nombre": "Dije Sol",
-    "precio": 1100,
-    "descripcion": "Dije con sol de acero.",
-    "img": "assets/images/dije_sol.jpg",
+    "nombre": "Dije Mujer Embarazada",
+    "precio": 2445,
+    "descripcion": "Dije de mujer embaraza en acero.",
+    "img": "assets/images/Dije mujer embarazada.jpg",
     "categoria": "dijes/colgantes"
   },
   {
@@ -297,10 +297,10 @@
   },
   {
     "id": 38,
-    "nombre": "Abridor Cuadrado",
-    "precio": 1800,
-    "descripcion": "Abridor de acero cuadrado.",
-    "img": "assets/images/abridor_cuadrado.jpg",
+    "nombre": "Abridor de forma de Luna",
+    "precio": 2550,
+    "descripcion": "Abridor de acero de forma de Luna.",
+    "img": "assets/images/Abridor de forma de Luna.jpg",
     "categoria": "abridores"
   },
   {
@@ -313,10 +313,10 @@
   },
   {
     "id": 40,
-    "nombre": "Pulsera Elegante",
-    "precio": 3500,
-    "descripcion": "Pulsera elegante de acero inoxidable.",
-    "img": "assets/images/pulsera_elegante.jpg",
+    "nombre": "Pulsera ",
+    "precio": 20130,
+    "descripcion": "Pulsera de acero.",
+    "img": "assets/images/Pulsera.jpg",
     "categoria": "pulseras"
   },
   {
@@ -329,10 +329,10 @@
   },
   {
     "id": 42,
-    "nombre": "Dije Luna y Estrella",
-    "precio": 1250,
-    "descripcion": "Dije de acero con diseño de luna y estrella.",
-    "img": "assets/images/dije_luna_estrella.jpg",
+    "nombre": "Dije pareja de tango",
+    "precio": 2445,
+    "descripcion": "Dije de acero de pareja de tango.",
+    "img": "assets/images/Dije pareja de tango.jpg",
     "categoria": "dijes/colgantes"
   }
 ]
