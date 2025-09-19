@@ -239,6 +239,33 @@ footer .social-icons a:hover {
 .loader-ring span:nth-child(3) { transform: rotate(180deg) translate(50px); }
 .loader-ring span:nth-child(4) { transform: rotate(270deg) translate(50px); }
 
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+  text-decoration: none;
+  color: white;
+}
+
 @keyframes rotate {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

@@ -42,3 +42,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (loader) loader.classList.add("hidden"); // hidden: clase CSS para ocultar el loader
 });
 
+
+// Slice de productos para scroll infinito (en catálogo)
+// .Slice: método que devuelve una copia de una parte del array
+// .call: método que llama a una función con un valor this específico
+// --- Tooltips de Bootstrap ---
+// Inicializa los tooltips de Bootstrap en los elementos que los tengan definidos 
+// data-bs-toggle="tooltip"
+// .map : método que crea un nuevo array con los resultados de la llamada a una función para cada elemento del array
+// <!-- BOTÓN WHATSAPP con tooltip -->
+  document.addEventListener("DOMContentLoaded", function () {
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  });
+
