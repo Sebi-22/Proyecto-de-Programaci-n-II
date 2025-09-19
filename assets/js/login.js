@@ -1,24 +1,34 @@
-const loginForm = document.getElementById('loginForm');
+// Obtiene el formulario de contacto por su ID
+const form = document.getElementById("formContacto");
 
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+if (form) {
+  // Agrega un listener al evento 'submit' del formulario
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Previene el comportamiento por defecto (recargar la página)
 
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
+    // Obtiene los valores de los campos del formulario
+    const nombre = form.name.value;
+    const correo = form.mail.value;
+    const instagram = form.insta.value;
+    const mensaje = form.msg.value;
 
-  if (email === '' || password === '') {
-    alert('Por favor completa todos los campos');
-    return;
-  }
-
-  // Guardamos sesión en localStorage (simulación)
-  localStorage.setItem('usuario', JSON.stringify({ email }));
-
-  alert(`¡Bienvenido, ${email}!`);
-  loginForm.reset();
-
-  // Redirigir al home
-  window.location.href = '../index.html';
-});
-
-export { loginForm };
+    // Simula el envío del formulario usando una Promesa
+    // then: método que se ejecuta si la promesa se resuelve correctamente
+    // catch: método que se ejecuta si la promesa es rechazada (error)
+    new Promise((resolve, reject) => {
+      if (nombre && correo) {
+        resolve("Formulario enviado correctamente!");
+      } else {
+        reject("Faltan datos obligatorios");
+      }
+    })
+    .then(resultado => {
+      alert(resultado);
+      // Muestra los datos enviados en la consola
+      console.log("Datos enviados:", { nombre, correo, instagram, mensaje });
+    })
+    .catch(error => {
+      alert(error);
+    });
+  });
+}

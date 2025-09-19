@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "nombre": "Cadena de acero",
+    "nombre": "Collar de acero",
     "precio": 3335,
     "descripcion": "Acero trenzada cierre marinero.",
     "img": "assets/images/Cadena Acero trenzada cierre marinero.jpg",
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "nombre": "Aros colgante doble circulos",
-    "precio": 1155,
+    "precio": 3080,
     "descripcion": "Acero colgante doble circulos.",
     "img": "assets/images/Aros acero colgante doble circulos.jpg",
     "categoria": "aros"
@@ -65,26 +65,26 @@
   },
   {
     "id": 9,
-    "nombre": "Anillo Trenzado",
-    "precio": 1800,
-    "descripcion": "Anillo de acero trenzado simple.",
-    "img": "assets/images/anillo_trenzado.jpg",
+    "nombre": "Anillo con perla",
+    "precio": 6725,
+    "descripcion": "Anillo de acero con perla.",
+    "img": "assets/images/Anillo con perla.jpg",
     "categoria": "anillos"
   },
   {
     "id": 10,
-    "nombre": "Pulsera de acero",
-    "precio": 14300,
-    "descripcion": "Pulsera de acero .",
-    "img": "assets/images/Pulsera de acero.jpg",
+    "nombre": "Pulsera cordon fino de acero",
+    "precio": 2975,
+    "descripcion": "Pulsera cordon fino de acero .",
+    "img": "assets/images/Pulsera cordon fino de acero.jpg",
     "categoria": "pulseras"
   },
   {
     "id": 11,
-    "nombre": "Cadena Simple",
-    "precio": 2900,
-    "descripcion": "Cadena sencilla de acero.",
-    "img": "assets/images/cadena_simple.jpg",
+    "nombre": "Collar tejido de 3mm",
+    "precio": 2750,
+    "descripcion": "Collar tejio de 3mm de  acero.",
+    "img": "assets/images/Collar tejido de 3mm.jpg",
     "categoria": "collares"
   },
   {
@@ -98,7 +98,7 @@
   {
     "id": 13,
     "nombre": "Aros Flor Colgante",
-    "precio": 2750,
+    "precio": 3430,
     "descripcion": "Aros flor colgante de acero.",
     "img": "assets/images/Aro flor colgante.jpg",
     "categoria": "aros"
@@ -113,26 +113,26 @@
   },
   {
     "id": 15,
-    "nombre": "Anillo Doble",
-    "precio": 2000,
-    "descripcion": "Anillo doble de acero con diseño moderno.",
-    "img": "assets/images/anillo_doble.jpg",
+    "nombre": "Anillo ",
+    "precio": 10030,
+    "descripcion": "Anillo  de acero.",
+    "img": "assets/images/Anillo.jpg",
     "categoria": "anillos"
   },
   {
     "id": 16,
-    "nombre": "Pulsera con dijes colgantes símbolo de la paz",
-    "precio": 13820,
-    "descripcion": "Pulsera de acero con dijes colgantes símbolo de la paz.",
-    "img": "assets/images/Pulsera con dijes colgantes simbolo de la paz.jpg",
+    "nombre": "Pulsera Esclava Color Verde",
+    "precio": 2840,
+    "descripcion": "Pulsera de acero Esclava color verde.",
+    "img": "assets/images/Pulsera esclava color verde.jpg",
     "categoria": "pulseras"
   },
   {
     "id": 17,
-    "nombre": "Cadena Forzada",
-    "precio": 4500,
-    "descripcion": "Cadena de acero con eslabones forzados.",
-    "img": "assets/images/cadena_forzada.jpg",
+    "nombre": "Collar bolita 8mm",
+    "precio": 11325,
+    "descripcion": "Collar de acero bolita 8mm.",
+    "img": "assets/images/Collar bolita 8mm.jpg",
     "categoria": "collares"
   },
   {
@@ -145,10 +145,10 @@
   },
   {
     "id": 19,
-    "nombre": "Aros trepadores bolitas xunidad ",
-    "precio": 1050,
-    "descripcion": "Aros trepador bolitas de acero",
-    "img": "assets/images/Aros trepadores.jpg",
+    "nombre": "Aros Macizo",
+    "precio": 5630,
+    "descripcion": "Aros macizo de acero",
+    "img": "assets/images/Aro macizo.jpg",
     "categoria": "aros"
   },
   {
@@ -161,26 +161,26 @@
   },
   {
     "id": 21,
-    "nombre": "Anillo Cruz",
-    "precio": 1700,
-    "descripcion": "Anillo con cruz de acero.",
-    "img": "assets/images/anillo_cruz.jpg",
+    "nombre": "Anillo Rectangular",
+    "precio": 11040,
+    "descripcion": "Anillo rectangular acero.",
+    "img": "assets/images/Anillo rectangular.jpg",
     "categoria": "anillos"
   },
   {
     "id": 22,
-    "nombre": "Pulsera Chata",
-    "precio": 17640,
-    "descripcion": "Pulsera de acero chata.",
-    "img": "assets/images/Pulsera chata.jpg",
+    "nombre": "Pulsera de acero con cierre marinero",
+    "precio": 8735,
+    "descripcion": "Pulsera de acero con cierre marinero.",
+    "img": "assets/images/Pulsera de acero con cierre marinero.jpg",
     "categoria": "pulseras"
   },
   {
     "id": 23,
-    "nombre": "Cadena Vintage",
-    "precio": 3800,
-    "descripcion": "Cadena estilo vintage de acero.",
-    "img": "assets/images/cadena_vintage.jpg",
+    "nombre": "Collar de Tourbillon",
+    "precio": 4070,
+    "descripcion": "Collar de tourbillon de acero de 3mm.",
+    "img": "assets/images/Collar Tourbillon.jpg",
     "categoria": "collares"
   },
   {
@@ -209,26 +209,26 @@
   },
   {
     "id": 27,
-    "nombre": "Anillo Minimal",
-    "precio": 1500,
-    "descripcion": "Anillo simple minimalista de acero.",
-    "img": "assets/images/anillo_minimal.jpg",
+    "nombre": "Anillo mariposa abierto",
+    "precio": 6910,
+    "descripcion": "Anillo mariposa abierta de  acero.",
+    "img": "assets/images/Anillo mariposa abierto.jpg",
     "categoria": "anillos"
   },
   {
     "id": 28,
-    "nombre": "Pulsera con piedras",
-    "precio": 20150,
-    "descripcion": "Pulsera con piedras .",
-    "img": "assets/images/Pulsera con piedras.jpg",
+    "nombre": "Pulsera esclava Abierta",
+    "precio": 9820,
+    "descripcion": "Pulsera esclava abierta de acero .",
+    "img": "assets/images/Pulsera esclava Abierta.jpg",
     "categoria": "pulseras"
   },
   {
     "id": 29,
-    "nombre": "Cadena Elegante",
-    "precio": 4100,
-    "descripcion": "Cadena elegante de acero inoxidable.",
-    "img": "assets/images/cadena_elegante.jpg",
+    "nombre": "Collar forcet 2,8mm",
+    "precio": 2565,
+    "descripcion": "Collar forcet de 2,8mm de acero.",
+    "img": "assets/images/Collar Forcet 2,8mm.jpg",
     "categoria": "collares"
   },
   {
@@ -241,10 +241,10 @@
   },
   {
     "id": 31,
-    "nombre": "Aros formita",
-    "precio": 850,
-    "descripcion": "Aros formita clave de sol.",
-    "img": "assets/images/Aros Formita.jpg",
+    "nombre": "Aros Argolla lisas ",
+    "precio": 2890,
+    "descripcion": "Aros argoya lisa de acero.",
+    "img": "assets/images/Aros argollas lisas.jpg",
     "categoria": "aros"
   },
   {
@@ -257,10 +257,10 @@
   },
   {
     "id": 33,
-    "nombre": "Anillo Triple",
-    "precio": 2100,
-    "descripcion": "Anillo triple de acero inoxidable.",
-    "img": "assets/images/anillo_triple.jpg",
+    "nombre": "Anillo negro",
+    "precio": 5525,
+    "descripcion": "Anillo de acero negro.",
+    "img": "assets/images/Anillo acero negro.jpg",
     "categoria": "anillos"
   },
   {
@@ -273,10 +273,10 @@
   },
   {
     "id": 35,
-    "nombre": "Cadena Mediana",
-    "precio": 3600,
-    "descripcion": "Cadena de acero mediana.",
-    "img": "assets/images/cadena_mediana.jpg",
+    "nombre": "Collar espejito",
+    "precio": 1855,
+    "descripcion": "Collar de acero espejito.",
+    "img": "assets/images/Collar Espejito.jpg",
     "categoria": "collares"
   },
   {
@@ -305,26 +305,26 @@
   },
   {
     "id": 39,
-    "nombre": "Anillo Corazón",
-    "precio": 1700,
-    "descripcion": "Anillo con corazón de acero.",
-    "img": "assets/images/anillo_corazon.jpg",
+    "nombre": "Anillo cuadrado",
+    "precio": 10070,
+    "descripcion": "Anillo cuadrado de acero.",
+    "img": "assets/images/Anillo cuadrado.jpg",
     "categoria": "anillos"
   },
   {
     "id": 40,
-    "nombre": "Pulsera ",
-    "precio": 20130,
-    "descripcion": "Pulsera de acero.",
-    "img": "assets/images/Pulsera.jpg",
+    "nombre": "Pulsera con dije corazón",
+    "precio": 7125,
+    "descripcion": "Pulsera de acero con dije corazon.",
+    "img": "assets/images/Pulsera con dije corazon.jpg",
     "categoria": "pulseras"
   },
   {
     "id": 41,
-    "nombre": "Cadena Fina",
-    "precio": 4000,
-    "descripcion": "Cadena fina de acero inoxidable, elegante y sencilla.",
-    "img": "assets/images/cadena_fina.jpg",
+    "nombre": "Collar Clapton",
+    "precio": 3990,
+    "descripcion": "Collar de acero Clapton.",
+    "img": "assets/images/Collar Clapton.jpg",
     "categoria": "collares"
   },
   {
