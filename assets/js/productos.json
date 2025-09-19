@@ -33,10 +33,10 @@
   },
   {
     "id": 5,
-    "nombre": "Dijes de acero",
-    "precio": 1248,
-    "descripcion": "Acero cruz inflada corazones.",
-    "img": "assets/images/Dije acero cruz inflada corazonres.jpg",
+    "nombre": "Dijes Lady Di",
+    "precio": 3320,
+    "descripcion": "Acero lady di perla negra.",
+    "img": "assets/images/Dije lady die.jpg",
     "categoria": "dijes/colgantes"
   },
   {
@@ -334,5 +334,133 @@
     "descripcion": "Dije de acero de pareja de tango.",
     "img": "assets/images/Dije pareja de tango.jpg",
     "categoria": "dijes/colgantes"
+  },
+  {
+    "id": 43,
+    "nombre": "Dije de cruz inflada con corazón",
+    "precio": 3930,
+    "descripcion": "Dije de cruz inflada con corazones de acero quirúrgico.",
+    "img": "assets/images/Dije acero cruz inflada corazonres.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 44,
+    "nombre": "Medalla San Benito",
+    "precio": 10035,
+    "descripcion": "Medalla San Benito en  acero.",
+    "img": "assets/images/Medalla san benito.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 45,
+    "nombre": "Medalla Virgen de Luján y Sagrado Corazón",
+    "precio": 4150,
+    "descripcion": "Medalla de la virgen de lujan y sagrado corazon de acero.",
+    "img": "assets/images/Medallas de la virgen de lujan y Sagarado Corazon.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 46,
+    "nombre": "Cruz con cubic",
+    "precio": 2970,
+    "descripcion": "Cruz de acero con cubic.",
+    "img": "assets/images/Cruz con cubic.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 47,
+    "nombre": "medalla con angelito",
+    "precio": 3725,
+    "descripcion": "Medalla con angelito de acero quirúrgico.",
+    "img": "assets/images/Medalla con angelito.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 48,
+    "nombre": "Cruz con cristo",
+    "precio": 4615,
+    "descripcion": "Cruz con cristo de acero.",
+    "img": "assets/images/Cruz con cristo.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 49,
+    "nombre": "Cruz de San Benito",
+    "precio": 4085,
+    "descripcion": "Cruz de San Benito en acero.",
+    "img": "assets/images/Cruz San Benito.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 50,
+    "nombre": "Cruz  grabada con flores",
+    "precio": 2880,
+    "descripcion": "Cruz grabada con flores acero quirúrgico.",
+    "img": "assets/images/Cruz grabada con flores.jpg",
+    "categoria": "cruces/imagenes"
+  },
+  {
+    "id": 53,
+    "nombre": "Pulsera Shema Israel(D´s es único)",
+    "precio": 35000,
+    "descripcion": "Pulsera acero y cuero.",
+    "img": "assets/images/Pulsera shema Israel y cuero.jpg",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 54,
+    "nombre": "Medalla Mazal(Suerte)",
+    "precio": 3330,
+    "descripcion": "Medalla de acero.",
+    "img": "assets/images/Medalla Mazal.jpg",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 55,
+    "nombre": "Dije de manito",
+    "precio": 2440,
+    "descripcion": "Dije de manito chica lisa de acero.",
+    "img": "assets/images/Dije de manito.jpg",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 56,
+    "nombre": "Dije con Jai (Vida) ",
+    "precio": 5510,
+    "descripcion": "Dije de acero.",
+    "img": "assets/images/Dije con Jai (Vida).jpg",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 57,
+    "nombre": "Dije de Maguen David",
+    "precio": 4050,
+    "descripcion": "Dije de acero.",
+    "img": "assets/images/Dije de Maguen David.jpg",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 58,
+    "nombre": "Medalla Ojala",
+    "precio": 5680,
+    "descripcion": "Una vida de paz,amor,prosperidad,espiritualidad,salud,riqueza,sabiduria,honor y alegria de acero.",
+    "img": "assets/images/Medalla Ojala.png",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 59,
+    "nombre": "Dije Jai (letras)",
+    "precio": 3030,
+    "descripcion": "Dije Jai (Vida) de acero quirúrgico.",
+    "img": "assets/images/Dije Jai (Letras).jpg",
+    "categoria": "judaicos"
+  },
+  {
+    "id": 60,
+    "nombre": "Dije de manito grabada con ojito",
+    "precio": 4280,
+    "descripcion": "Dije de manito en acero.",
+    "img": "assets/images/Dije de Manito grabada con ojito.jpg",
+    "categoria": "judaicos"
   }
 ]

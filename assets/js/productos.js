@@ -53,7 +53,9 @@ const productos = [
   new Producto(5, "Dijes de acero", 1248, "Acero cruz inflada corazones.", "assets/images/Dije acero cruz inflada corazonres.jpg", "dijes/colgantes"),
   new Producto(6, "Dije Colibri", 735, "Acero colibri.", "assets/images/dije acero colibri.jpg", "dijes/colgantes"),
   new Producto(7, "Aros colgante doble circulos", 1155, "Acero colgante doble circulos.", "assets/images/Aros acero colgante doble circulos.jpg", "aros"),
-  new Producto(8, "Abridor acero mariposa y cobra x12 pares", 18748, "Abridor de acero mariposa y cobrea x12 pares.", "assets/images/Abridor acero mariposa y cobra x12 pares.jpg", "abridores")
+  new Producto(8, "Abridor acero mariposa y cobra x12 pares", 18748, "Abridor de acero mariposa y cobrea x12 pares.", "assets/images/Abridor acero mariposa y cobra x12 pares.jpg", "abridores"),
+  new Producto(9, "Cruz de acero con imagen", 2250, "Cruz de acero con imagen religiosa grabada.", "assets/images/Cruz acero imagen.jpg", "cruces/imagenes"),
+  new Producto(10, "Estrella de David de acero", 3100, "Colgante judaico Estrella de David en acero.", "assets/images/Estrella David acero.jpg", "judaicos")
 ];
 
 // ---- Exportaciones ----

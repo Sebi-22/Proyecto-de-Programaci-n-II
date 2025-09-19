@@ -1,42 +1,29 @@
-// Obtiene el formulario de contacto por su ID
-const form = document.getElementById("formContacto");
+const form = document.getElementById("loginForm");
 
 if (form) {
-  // Agrega un listener al evento 'submit' del formulario
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto (recargar la página)
+    e.preventDefault();
 
-    // Obtiene los valores de los campos del formulario
-    const nombre = form.name.value;
-    const correo = form.mail.value;
-    const instagram = form.insta.value;
-    const mensaje = form.msg.value;
+    const correo = form.email.value.trim();
+    const password = form.password.value.trim();
 
-    // Simula el envío del formulario usando una Promesa
-    // then: método que se ejecuta si la promesa se resuelve correctamente
-    // catch: método que se ejecuta si la promesa es rechazada (error)
+    // Validación básica de correo
+    const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+
     new Promise((resolve, reject) => {
-      if (nombre && correo) {
-        resolve("Formulario enviado correctamente!");
+      if (correo && password && correoValido) {
+        resolve("¡Inicio de sesión exitoso!");
       } else {
-        reject("Faltan datos obligatorios");
+        reject("Faltan datos obligatorios o el correo no es válido");
       }
     })
     .then(resultado => {
       alert(resultado);
-      // Muestra los datos enviados en la consola
-      console.log("Datos enviados:", { nombre, correo, instagram, mensaje });
+      form.reset();
+      window.location.href = "/index.html";
     })
     .catch(error => {
       alert(error);
     });
   });
 }
-
-// --- Loader ---
-// Muestra un loader (pantalla de carga) durante 2 segundos al cargar la página y luego lo oculta
-document.addEventListener("DOMContentLoaded", async () => {
-  await new Promise((resolve) => setTimeout(resolve, 2000)); // Espera 2 segundos
-  const loader = document.getElementById("loader");
-  if (loader) loader.classList.add("hidden"); // hidden: clase CSS para ocultar el loader
-});
