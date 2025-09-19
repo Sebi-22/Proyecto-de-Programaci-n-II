@@ -178,3 +178,12 @@ if (document.readyState === "loading") {
 
 // Exporta las funciones y variables principales para usarlas en otros archivos
 export { productos, mostrarModal, renderProductosScroll };
+
+
+// --- Loader ---
+// Muestra un loader (pantalla de carga) durante 2 segundos al cargar la página y luego lo oculta
+document.addEventListener("DOMContentLoaded", async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000)); // Espera 2 segundos
+  const loader = document.getElementById("loader");
+  if (loader) loader.classList.add("hidden"); // hidden: clase CSS para ocultar el loader
+});
