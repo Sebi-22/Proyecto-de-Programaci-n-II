@@ -8,7 +8,6 @@ registroForm.addEventListener('submit', (e) => {
   e.preventDefault(); // Previene el comportamiento por defecto (recargar la página)
 
   // Obtiene y limpia los valores de los campos del formulario
-  // trim(): elimina los espacios en blanco al inicio y al final del texto
   const nombre = document.getElementById('nombre').value.trim();
   const email = document.getElementById('email').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
@@ -42,16 +41,16 @@ registroForm.addEventListener('submit', (e) => {
     pedidos: [] // Inicializa el array de pedidos vacío
   };
 
-  // Guarda el usuario en localStorage (como string)
-  // JSON.stringify(): convierte un objeto JavaScript a una cadena de texto JSON
-  // localStorage.setItem(): guarda un valor en el almacenamiento local del navegador bajo una clave específica
-  localStorage.setItem("usuario", JSON.stringify(userData));
+  // Guarda el usuario en localStorage (como texto)
+  // JSON.stringify → "convertirAtexto": transforma el objeto JavaScript a un texto en formato JSON
+  // localStorage.setItem → "guardarValor": guarda en el navegador un valor bajo una clave específica
+  localStorage.guardarValor("usuario", JSON.convertirAtexto(userData));
 
   alert(`¡Cuenta creada para ${nombre}!`);
   registroForm.reset(); // reset: método que limpia todos los campos del formulario
 
   // Redirige al usuario a la página de perfil
-  window.location.href = '/pages/perfil.html'; // href: propiedad para cambiar la URL y redirigir
+  window.location.href = '/pages/perfil.html';
 });
 
 export { registroForm }; // Exporta el formulario para usarlo en otros archivos si es necesario
@@ -62,5 +61,5 @@ export { registroForm }; // Exporta el formulario para usarlo en otros archivos 
 document.addEventListener("DOMContentLoaded", async () => {
   await new Promise((resolve) => setTimeout(resolve, 2000)); // Espera 2 segundos
   const loader = document.getElementById("loader");
-  if (loader) loader.classList.add("hidden"); // hidden: clase CSS para ocultar el loader
+  if (loader) loader.classList.add("hidden");
 });

@@ -2,12 +2,15 @@ const form = document.getElementById("loginForm");
 
 if (form) {
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+    // preventDefault(): método que evita la acción por defecto de un evento.
+    // En este caso, impide que el formulario recargue la página al enviarse,
+    // permitiendo manejar el proceso con JavaScript (validaciones, redirección, etc.).
 
     const correo = form.email.value.trim();
     const password = form.password.value.trim();
 
-    // Validación básica de correo
+    // Validación básica de correo con expresión regular
     const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
 
     new Promise((resolve, reject) => {
@@ -19,11 +22,12 @@ if (form) {
     })
     .then(resultado => {
       alert(resultado);
-      form.reset();
-      window.location.href = "/index.html";
+      form.reset(); // reset: método que limpia todos los campos del formulario
+      window.location.href = "/index.html"; // href: redirige al usuario a la página principal
     })
     .catch(error => {
       alert(error);
     });
   });
 }
+export { form }; // Exporta el formulario para usarlo en otros archivos si es necesario

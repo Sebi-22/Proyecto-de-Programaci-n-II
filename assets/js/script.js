@@ -26,11 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- Buscar producto por id ---
 // Busca un producto en el array productos por su id
 function buscarProductoPorId(id) {
+  // 👉 .find:
+  // Recorre el array "productos" y devuelve el PRIMER elemento que cumpla la condición
+  // En este caso: que el id del producto sea igual al id buscado.
+  // Si no encuentra ninguno, devuelve undefined, y por eso usamos || null.
   return productos.find((p) => p.id === Number(id)) || null;
 }
 
 // --- Mostrar modal ---
-// Muestra el modal con la información del producto seleccionado
 function mostrarModal(id) {
   const producto = buscarProductoPorId(id);
   if (!producto || !modalInstance) return;
@@ -46,7 +49,6 @@ function mostrarModal(id) {
     <button class="btn btn-warning w-100 mt-3" id="btnAddCarrito">Agregar al carrito 🛒</button>
   `;
 
-  // Al hacer click en el botón, agrega el producto al carrito y oculta el modal
   modalBody.querySelector("#btnAddCarrito").addEventListener("click", async () => {
     const { agregarAlCarrito } = await getCarritoModule();
     if (!producto) return console.error("Producto inválido al agregar al carrito");
@@ -65,13 +67,15 @@ function mostrarModal(id) {
 }
 
 // --- Render destacados ---
-// Muestra hasta 3 productos destacados en la página principal
 function renderDestacados() {
   const container = document.getElementById("productos");
   if (!container) return;
   container.innerHTML = "";
 
-  // min: función que devuelve el menor valor entre productos.length y 3
+  // 👉 Math.min:
+  // Devuelve el menor de los números pasados como argumento.
+  // Aquí elige el menor entre "productos.length" y "3".
+  // Ejemplo: si hay 10 productos, devuelve 3. Si hay 2 productos, devuelve 2.
   const limite = Math.min(productos.length, 3);
 
   for (let i = 0; i < limite; i++) {
@@ -125,41 +129,45 @@ function renderDestacados() {
 }
 
 // --- Cargar productos desde JSON ---
-// Carga los productos desde un archivo JSON y los agrega al array productos
 fetch("./assets/js/productos.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((p) => {
       productos.push(new Producto(p.id, p.nombre, p.precio, p.descripcion, p.img, p.categoria));
     });
-    renderDestacados(); // Muestra los productos destacados después de cargarlos
+    renderDestacados(); 
   })
   .catch((err) => console.error("Error cargando productos:", err));
 
 // --- Loader ---
-// Muestra un loader (pantalla de carga) durante 2 segundos al cargar la página y luego lo oculta
 document.addEventListener("DOMContentLoaded", async () => {
-  await new Promise((resolve) => setTimeout(resolve, 2000)); // Espera 2 segundos
+  await new Promise((resolve) => setTimeout(resolve, 2000)); 
   const loader = document.getElementById("loader");
-  if (loader) loader.classList.add("hidden"); // hidden: clase CSS para ocultar el loader
+  if (loader) loader.classList.add("hidden"); 
 });
 
-// Slice de productos para scroll infinito (en catálogo)
-// .Slice: método que devuelve una copia de una parte del array
-// .call: método que llama a una función con un valor this específico
 // --- Tooltips de Bootstrap ---
-// Inicializa los tooltips de Bootstrap en los elementos que los tengan definidos 
-// data-bs-toggle="tooltip"
-// .map : método que crea un nuevo array con los resultados de la llamada a una función para cada elemento del array
-// <!-- BOTÓN WHATSAPP con tooltip -->
-  document.addEventListener("DOMContentLoaded", function () {
-    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  // 👉 [].slice.call():
+  // "slice" normalmente copia una parte de un array.
+  // Pero cuando hacemos [].slice.call(NodeList), lo que hace es:
+  // convertir un NodeList (resultado de querySelectorAll) en un array verdadero.
+  // "call" permite ejecutar "slice" como si el NodeList fuera un array.
+  let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+
+  // 👉 .map:
+  // Recorre cada elemento de un array y devuelve un nuevo array con el resultado.
+  // Aquí recorre todos los elementos con data-bs-toggle="tooltip"
+  // y para cada uno crea un "Tooltip" de Bootstrap.
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+    // 👉 new bootstrap.Tooltip():
+    // "Tooltip" es un componente de Bootstrap que muestra un mensaje flotante
+    // cuando el usuario pasa el mouse sobre un elemento.
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+});
+
 // --- Gestión de sesión ---
-// Muestra el email del usuario en la barra de navegación si está logueado y permite cerrar sesión
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
   const navCuenta = document.getElementById("navCuenta");
@@ -175,12 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <li><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a></li>
     `;
 
-    // Al hacer click en "Cerrar Sesión", elimina el usuario del localStorage y recarga la página
     document.getElementById("cerrarSesion").addEventListener("click", () => {
       localStorage.removeItem("usuario");
-      window.location.reload(); // reload: recarga la página para actualizar la interfaz
+      window.location.reload(); 
     });
   }
 });
 
-export { productos, mostrarModal, renderDestacados }; // Exporta las funciones y variables principales
+export { productos, mostrarModal, renderDestacados }; 

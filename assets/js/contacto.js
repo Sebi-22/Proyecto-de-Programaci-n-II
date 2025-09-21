@@ -4,7 +4,8 @@ const form = document.getElementById("formContacto");
 if (form) {
   // Agrega un listener al evento 'submit' del formulario
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto (recargar la página)
+    e.preventDefault(); 
+    // preventDefault(): evita que el formulario recargue la página automáticamente.
 
     // Obtiene los valores de los campos del formulario
     const nombre = form.name.value;
@@ -23,38 +24,39 @@ if (form) {
       }
     })
     .then(resultado => {
-      alert(resultado); // then: muestra el mensaje si la promesa fue exitosa
-      // Muestra los datos enviados en la consola
+      alert(resultado); 
       console.log("Datos enviados:", { nombre, correo, instagram, mensaje });
     })
     .catch(error => {
-      alert(error); // catch: muestra el mensaje de error si la promesa fue rechazada
+      alert(error); 
     });
   });
 }
 
 
 // --- Loader ---
-// Muestra un loader (pantalla de carga) durante 2 segundos al cargar la página y luego lo oculta
+// Muestra un loader durante 2 segundos al cargar la página y luego lo oculta
 document.addEventListener("DOMContentLoaded", async () => {
   await new Promise((resolve) => setTimeout(resolve, 2000)); // Espera 2 segundos
   const loader = document.getElementById("loader");
-  if (loader) loader.classList.add("hidden"); // hidden: clase CSS para ocultar el loader
+  if (loader) loader.classList.add("hidden"); // hidden: clase CSS que oculta el loader
 });
 
 
-// Slice de productos para scroll infinito (en catálogo)
-// .Slice: método que devuelve una copia de una parte del array
-// .call: método que llama a una función con un valor this específico
 // --- Tooltips de Bootstrap ---
-// Inicializa los tooltips de Bootstrap en los elementos que los tengan definidos 
-// data-bs-toggle="tooltip"
-// .map : método que crea un nuevo array con los resultados de la llamada a una función para cada elemento del array
-// <!-- BOTÓN WHATSAPP con tooltip -->
-  document.addEventListener("DOMContentLoaded", function () {
-    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
+// Inicializa los tooltips en los elementos que los tengan con data-bs-toggle="tooltip"
+document.addEventListener("DOMContentLoaded", function () {
+  let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  // slice(): devuelve una copia de una parte del array o NodeList. 
+  // Acá se usa [].slice para convertir el resultado de querySelectorAll en un array real.
+
+  // call(): ejecuta una función con un valor "this" específico. 
+  // En este caso, [].slice.call(...) usa el método slice de Array aunque querySelectorAll devuelve un NodeList.
+
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+    // map(): recorre el array y devuelve un nuevo array con el resultado de aplicar la función a cada elemento.
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+    // bootstrap.Tooltip: clase de Bootstrap que activa los tooltips en los elementos indicados.
   });
+});
 
